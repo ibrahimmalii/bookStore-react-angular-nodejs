@@ -1,1 +1,1 @@
-# BookStore-react-nodejs
+# social-app-react-nodejs
