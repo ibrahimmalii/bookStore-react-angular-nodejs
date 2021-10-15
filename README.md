@@ -1,1 +1,1 @@
-# social-app-react-nodejs
+# social-app-react-angular-nodejs
