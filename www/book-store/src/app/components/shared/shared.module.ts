@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -16,7 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidebarComponent
   ],
   imports: [
-    CommonModule,NgxSliderModule,FontAwesomeModule
+    CommonModule
   ],
   exports :[
     HeaderComponent, FooterComponent, SidebarComponent

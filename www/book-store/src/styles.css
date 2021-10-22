@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "../node_modules/jquery-ui/themes/base/selectable.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
-<<<<<<< HEAD
 /* Constant Colors */
 :root{
   --mc : #000032;
@@ -13,10 +11,4 @@
   --bg : #fff6f4;
   --h5 : #FFFB1A;
   --text: #868096;
-=======
-.root {
-  --mc: #dddddd;
-  --sc: #b91d23;
-  --tc: ;
->>>>>>> 03932946b7a528d04352fa88e4ade17395bda755
 }

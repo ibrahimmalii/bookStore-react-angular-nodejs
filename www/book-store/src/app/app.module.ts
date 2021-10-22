@@ -1,15 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
-// import { Ng5SliderModule } from 'ng5-slider';
-//  import { Observable } from 'rxjs';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
-
 
 //start of import social login modules
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
@@ -24,7 +19,6 @@ import {GoogleLoginProvider , FacebookLoginProvider} from 'angularx-social-login
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-<<<<<<< HEAD
     AppRoutingModule,
     HttpClientModule,
     SocialLoginModule
@@ -53,9 +47,6 @@ import {GoogleLoginProvider , FacebookLoginProvider} from 'angularx-social-login
         }
       } as SocialAuthServiceConfig,
     }
-=======
-    AppRoutingModule,FontAwesomeModule,   NgxSliderModule
->>>>>>> 03932946b7a528d04352fa88e4ade17395bda755
   ],
   bootstrap: [AppComponent]
 })
