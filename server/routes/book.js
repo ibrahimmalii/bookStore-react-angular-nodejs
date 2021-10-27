@@ -19,38 +19,53 @@ const upload = multer({
 })
 
 
-router.post('/', upload.single('avatar'), async(req, res)=>{
+router.post('/', upload.single('avatar'), async (req, res) => {
     const book = new Book(req.body)
-    if(req.file){
-        const buffer = await sharp(req.file.buffer).resize({width: 250, height: 250}).png().toBuffer()
+    if (req.file) {
+        const buffer = await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toBuffer()
         book.avatar = buffer
     }
 
-    try{
+    try {
         await book.save()
-        
+
         res.status(201).json(book)
     } catch (e) {
         res.status(500).json(e)
     }
 })
 
-router.get('/me', auth, async(req, res)=>{
-    const {_id} = req.user
-    try{
-        const books = await Book.find({'owners.owner': _id})
+
+router.get('/me', auth, async (req, res) => {
+    const { _id } = req.user
+    try {
+        const books = await Book.find({ 'owners.owner': _id }, { avatar: 0 })
         res.json(books)
     } catch (e) {
         res.status(500).json()
     }
 })
 
-router.get('/:id', auth, async(req, res)=>{
-    const {id} = req.params
+// Get Books Image
+router.get('/:id/avatar', async(req, res)=>{
     try{
-        const book =await Book.findById(id)
+        const book = await Book.findById(req.params.id)
+        if(!book || !book.avatar){
+            throw new Error()
+        }
+        res.set('Content-Type', 'image/jpg')
+        res.send(book.avatar)
+    }catch(e){
+        res.status(404).send()
+    }
+})
+
+router.get('/:id', auth, async (req, res) => {
+    const { id } = req.params
+    try {
+        const book = await Book.findOne({ _id: id }, { avatar: 0 })
         await book.populate('comments')
-        if(!book){
+        if (!book) {
             return res.status(400).json('No books found')
         }
         res.json(book)
@@ -77,22 +92,10 @@ router.get('/:id', auth, async(req, res)=>{
 //     }
 // })
 
-router.get('/:id/avatar', async(req, res)=>{
-    try{
-        const book = await Book.findById(req.params.id)
-        if(!book || !book.avatar){
-            throw new Error()
-        }
-        res.set('Content-Type', 'image/jpg')
-        res.send(book.avatar)
-    }catch(e){
-        res.status(404).send()
-    }
-})
-
-router.get('', auth, async(req, res)=>{
-    try{
-        const books = await Book.find().limit(3)
+router.get('',  async (req, res) => {
+    try {
+        // To Ignore Avatar 
+        const books = await Book.find({}, { avatar: 0 }).limit(20)
         res.json(books)
     } catch (e) {
         res.status(500).json()

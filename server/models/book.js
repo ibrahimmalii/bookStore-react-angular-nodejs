@@ -41,7 +41,7 @@ const bookSchema = new Schema({
     category: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Category'
+        ref: 'Category',
     },
     comments: [{
         comment: {
@@ -58,5 +58,14 @@ const bookSchema = new Schema({
 })
 
 const Book = mongoose.model('Book', bookSchema)
+
+// Response some data and delete hide private data 
+bookSchema.methods.toJSON = function ()  {
+    const book = this
+    const bookObject = book.toObject()
+
+    delete bookObject.avatar
+    return bookObject
+}
 
 module.exports = Book
