@@ -2,16 +2,89 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+/* @import 'node_modules/primeicons/primeicons.css'; */
+
+
+/* @import 'node_modules/primeng/resources/themes/saga-blue/theme.css'; */
+
+
+/* @import 'node_modules/primeng/resources/primeng.min.css'; */
+
+
 /* Constant Colors */
-:root{
-  --mc : #000032;
-  --sc : #63FF1A;
-  --tc : #000;
-  --fc : #D29F96;
-  --bg : #fff6f4;
-  --h5 : #FFFB1A;
-  --text: #868096;
+
+:root {
+    --mc: #000032;
+    --sc: #63FF1A;
+    --tc: #000;
+    --fc: #D29F96;
+    --bg: #fff6f4;
+    --h5: #FFFB1A;
+    --text: #868096;
 }
-*{
-  direction: rtl;
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.card-body {
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    margin: 20px 10px;
+}
+
+.card-body a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: auto;
+    font-weight: 600;
+}
+
+
+/* .card-body a:hover {
+  color: #bb2d3b;
+  text-decoration: none;
+} */
+
+#price {
+    margin-top: 10px;
+}
+
+
+/* .container {
+  /* margin: 10
+px
+; */
+
+
+/* display: flex; */
+
+
+/* flex-wrap: nowrap;
+  /* align-content: stretch; */
+
+
+/* justify-content: space-evenly; */
+
+
+/* @media (min-width: 1200px) */
+
+h3 {
+    /* font-size: 1.75rem; */
+    font-size: 19px;
+    font-weight: 900;
+}
+
+h5 {
+    /* font-size: 1.25rem; */
+    font-size: 17px;
 }

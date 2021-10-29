@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <p class="text-center fs-5 fw-bold mt-5">{{card.title}}</p>
+            <p class="text-center fs-5 fw-bold mt-5">5 نجوم </p>
+            <p>
+                {{card.description}}
+            </p>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Leave a comment</mat-label>
+                    <textarea class="color-primary" matInput placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+            </form>
+            <div>
+                <ul *ngFor="let comment of comments">
+                    <li>
+                        <p> {{comment}} </p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-3 card p-0 text-center">
+            <img class="img-fluid" src="http://localhost:8080/api/books/{{card._id}}/avatar" />
+            <div class="card-body">
+                <h3>المؤلف : {{ card.author }}</h3>
+                <h5 class="card-title fs-5 fw-bold">{{ card.title }}</h5>
+                <span class="badge rounded-pill bg-primary" id="price">
+                {{card.price}} جنيه
+              </span>
+
+                <!-- <div class="price">
+                <h5>{{ book.price }}</h5>
+              </div> -->
+                <div class="mt-5 mb-5">
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star"></i>
+                    <i class="fa fa-star star"></i>
+                </div>
+
+                <a href="#" class="btn btn-danger">الاضافة الي العربة</a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

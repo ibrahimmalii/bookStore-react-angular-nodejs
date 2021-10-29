@@ -10,6 +10,10 @@ import { CardComponent } from './components/card/card.component';
 //start of import social login modules
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {GoogleLoginProvider , FacebookLoginProvider} from 'angularx-social-login';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -23,7 +27,10 @@ import {GoogleLoginProvider , FacebookLoginProvider} from 'angularx-social-login
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     {
