@@ -3,13 +3,6 @@ import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AcademicCoursesModule } from './academic-courses/academic-courses.module';
-import { DetailsComponent } from './details/details.component';
-import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-import {MatIconModule} from '@angular/material/icon';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const routes: Routes = [
   {
@@ -30,7 +23,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,SharedModule, RouterModule.forChild(routes),MatInputModule,MatFormFieldModule,AccordionModule,MatIconModule,MatSnackBarModule
+    CommonModule,SharedModule, RouterModule.forChild(routes)
   ]
 })
 export class CategoriesModule { }
