@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MatIconModule} from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const routes: Routes = [
   {
@@ -35,7 +37,7 @@ const routes: Routes = [
     DetailsComponent
   ],
   imports: [
-    CommonModule,SharedModule, RouterModule.forChild(routes),MatInputModule,MatFormFieldModule,AccordionModule
+    CommonModule,SharedModule, RouterModule.forChild(routes),MatInputModule,MatFormFieldModule,AccordionModule,MatIconModule,MatSnackBarModule
   ]
 })
 export class CategoriesModule { }

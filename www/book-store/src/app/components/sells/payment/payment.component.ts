@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
@@ -9,14 +10,21 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private router: Router, private apiService: ApiService, private http: HttpClient) { }
 
   stripeResponse: any;
-  beforeClick:boolean = false
+  beforeClick: boolean = false
 
   ngOnInit(): void {
     this.loadStripe();
   }
+
+
+  // ************* paypal ***********//
+  paypal(){
+    location.assign('http://localhost:8080')
+  }
+
 
   loadStripe() {
 
@@ -32,12 +40,12 @@ export class PaymentComponent implements OnInit {
 
 
   pay(amount: any) {
-    this.beforeClick = true
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51JoBiBCT1XfYCoGciYEW3opcauXtFS0o6j4WSRvNXs4DwobozRK3YpE4wup170Mn1yNp7MXOaaF2acP04YTti0wa00666D4MmT',
       locale: 'auto',
       token: async (token: any) => {
         try {
+          this.beforeClick = true
           this.apiService.post('http://localhost:8080/api/payment',
             { tokenId: token.id, amount: 70 }
           ).subscribe((response: any) => {

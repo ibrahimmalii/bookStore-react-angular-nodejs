@@ -11,6 +11,23 @@ router.post('/', async(req, res)=>{
     }
 })
 
+// Carts page
+router.get('/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const category = await Category.findById(id)
+        
+        await category.populate({
+            path: 'books',
+            select: 'author title description price rate comments'
+        })
+
+        res.json(category.books)
+    } catch (e) {
+        res.status(500).json()
+    }
+})
+
 router.get('/',async (req, res)=>{
     try{
         const categories = await Category.find()

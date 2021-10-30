@@ -14,14 +14,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { SharedComponent } from './star-rating/components/main-page/shared/shared.component';
+// import { SharedComponent } from './star-rating/components/main-page/shared/shared.component';
+// import { AngularRaveModule } from 'angular-rave';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    SharedComponent,
+    // SharedComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,8 @@ import { SharedComponent } from './star-rating/components/main-page/shared/share
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule
+
+    // AngularRaveModule
   ],
   providers: [
     {
