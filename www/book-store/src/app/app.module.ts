@@ -14,12 +14,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { SharedComponent } from './star-rating/components/main-page/shared/shared.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
+    SharedComponent,
   ],
   imports: [
     BrowserModule,
