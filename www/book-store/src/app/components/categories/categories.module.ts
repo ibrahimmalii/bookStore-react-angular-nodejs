@@ -1,4 +1,3 @@
-
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -23,19 +22,13 @@ const routes: Routes = [
     path: 'graduate',
     loadChildren: () => import('./graduate-studies/graduate-studies.module').then(m => m.GraduateStudiesModule)
   },
-  {
-    path:'book-details/:id',
-   component : DetailsComponent
-  },
   {path : '', component : AcademicCoursesModule}
 ];
 
 
 
 @NgModule({
-  declarations: [
-    DetailsComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,SharedModule, RouterModule.forChild(routes),MatInputModule,MatFormFieldModule,AccordionModule,MatIconModule,MatSnackBarModule
   ]

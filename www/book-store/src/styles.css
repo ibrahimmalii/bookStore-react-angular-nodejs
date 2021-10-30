@@ -2,31 +2,7 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-/* @import 'node_modules/primeicons/primeicons.css'; */
-
-
-/* @import 'node_modules/primeng/resources/themes/saga-blue/theme.css'; */
-
-
-/* @import 'node_modules/primeng/resources/primeng.min.css'; */
-
-
 /* Constant Colors */
-
-:root {
-    --mc: #000032;
-    --sc: #63FF1A;
-    --tc: #000;
-    --fc: #D29F96;
-    --bg: #fff6f4;
-    --h5: #FFFB1A;
-    --text: #868096;
-}
-
-html,
-body {
-    height: 100%;
-}
 
 body {
     margin: 0;

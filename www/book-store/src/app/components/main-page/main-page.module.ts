@@ -3,8 +3,6 @@ import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 
 const routes: Routes = [
   {path : '', component : HomeComponent}
@@ -15,7 +13,7 @@ const routes: Routes = [
     HomeComponent
   ],
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild(routes),MatInputModule,MatFormFieldModule
+    CommonModule, SharedModule, RouterModule.forChild(routes)
   ]
 })
 export class MainPageModule { }
