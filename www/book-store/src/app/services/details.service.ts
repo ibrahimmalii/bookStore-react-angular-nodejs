@@ -12,7 +12,7 @@ export class DetailsService {
   ) {
   return this._apisevice.get(`http://localhost:8080/api/books/${id}`,headers);
 }
-addBookComment(id:number, headers:any, body: any){
-  return this._apisevice.post(`http://localhost:8080/api/commnets/${id}`,body,headers);
+addBookComment(id:number, body:any,headers: any){
+  return this._apisevice.post(`http://localhost:8080/api/comments/${id}`,body,headers);
 }
 }

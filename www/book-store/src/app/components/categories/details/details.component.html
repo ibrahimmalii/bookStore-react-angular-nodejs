@@ -1,19 +1,25 @@
 <app-header></app-header>
 <div class="container">
     <div class="row">
-        <div class="col-8">
-            <p class="text-center fs-5 fw-bold mt-5">{{card.title}}</p>
-            <div class="mat-h2">Please rate this book!</div>
-            <!-- Display an array of star/star_border buttons -->
-            <button mat-icon-button class="btn  text-warning" *ngFor="let r of ratingArr; index as i" (click)="onClick(i)">
-    <mat-icon>
-        {{ returnStar(i) }}
-    </mat-icon>
-</button>
-            <p>
-                {{card.description}}
-            </p>
-            <form class="example-form">
+        <div class="offset-lg-2 col-md-12 col-lg-6">
+            <p class="text-center  fs-5 fw-bold mt-5">{{card.title}}</p>
+             <h1 class="text-end fw-bold mt-5 ">
+               :نبذة عن الكتاب
+            </h1>
+            <div class="card">
+                 <div class="card-body">
+                   <h2 class="text-end text-primary fw-bold mt-2">:الوصف </h2>
+                   <p class="text-end fw-light mt-3">
+                     كتاب رائع كتاب رائع كتاب
+                            كتاب رائع كتاب رائع كتاب
+                                   كتاب رائع كتاب رائع كتاب
+                                          كتاب رائع كتاب رائع كتاب
+                                                 كتاب رائع كتاب رائع كتاب
+                                                 رائع كتاب رائع كتاب رائع كتاب رائع كتاب رائع كتاب رائع
+                   </p>
+                </div>
+              </div>
+              <form class="example-form">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Leave a comment</mat-label>
                     <textarea class="" matInput placeholder="Ex. It makes me feel..." (keydown.enter)="pushComment(comment.value)" #comment></textarea>
@@ -27,20 +33,29 @@
 
                 </ul>
             </div>
+             <div class="mat-h2">Please rate this book!</div>
+            <!-- Display an array of star/star_border buttons -->
+            <button mat-icon-button class="btn  text-warning" *ngFor="let r of ratingArr; index as i" (click)="onClick(i)">
+    <mat-icon>
+        {{ returnStar(i) }}
+    </mat-icon>
+</button>
         </div>
-        <div class="col-3 card p-0 text-center">
+
+        <div class="offset-lg-1 col-md-12 col-lg-3 card p-0 text-center">
             <img class="img-fluid" src="http://localhost:8080/api/books/{{card._id}}/avatar" />
             <div class="card-body">
                 <h3>المؤلف : {{ card.author }}</h3>
                 <h5 class="card-title fs-5 fw-bold">{{ card.title }}</h5>
-                <span class="badge rounded-pill bg-primary" id="price">
+                <span class="badge badge-pill  badge- badge-primary">
                 {{card.price}} جنيه
               </span>
+              <br>
 
                 <!-- <div class="price">
                 <h5>{{ book.price }}</h5>
               </div> -->
-                <button mat-icon-button class="btn  text-warning" *ngFor="let r of ratingArr; index as i">
+                <button mat-icon-button class="btn  text-warning mt-5" *ngFor="let r of ratingArr; index as i">
                <mat-icon>
         {{ returnStar(i) }}
     </mat-icon>
@@ -50,4 +65,47 @@
         </div>
     </div>
 </div>
+<!--
+ <form class="example-form" [formGroup]="form">
+
+    <div *ngIf="card.mode == 'activate'">
+
+
+    <h2 mat-dialog-title style="    font-size: initial;"> Please provide a reason for re-activating this item</h2>
+
+    </div>
+    <div *ngIf="card.mode == 'deactivate'">
+
+    <h2 style="    font-size: initial;" mat-dialog-title> Please provide a reason for deactivating this item</h2>
+
+    </div>
+
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill">
+
+            <textarea formControlName="notes" matInput placeholder="text here ..." cols="30" rows="5">
+                </textarea> -->
+             <!-- <mat-error *ngIf="isControlHasError(form, 'reasons', 'required')">
+                Name is <strong>required</strong>
+            </mat-error>  -->
+        <!-- </mat-form-field>
+    </p>
+
+    <br />
+    <br />
+
+    <div class="row" align="end">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+            <div class="example-button-row">
+                <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">
+                    <span>Save</span>
+
+                </button>
+                <button mat-flat-button color="warn" type="button"  tabindex="-1">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</form> -->
 <app-footer></app-footer>

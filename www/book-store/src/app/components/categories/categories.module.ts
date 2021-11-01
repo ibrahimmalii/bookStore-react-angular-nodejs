@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -34,7 +35,7 @@ const routes: Routes = [
     DetailsComponent
   ],
   imports: [
-    CommonModule,SharedModule, RouterModule.forChild(routes),MatIconModule,MatSnackBarModule,FormsModule,MatFormFieldModule,MatInputModule
+    CommonModule,SharedModule, RouterModule.forChild(routes),MatIconModule,MatSnackBarModule,FormsModule,MatFormFieldModule,MatInputModule,ReactiveFormsModule
   ]
 })
 export class CategoriesModule { }
