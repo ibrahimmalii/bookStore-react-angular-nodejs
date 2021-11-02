@@ -13,3 +13,8 @@
   text-decoration: underline;
   transform: rotate(90deg);
 } */
+
+
+*{
+  direction:rtl
+}

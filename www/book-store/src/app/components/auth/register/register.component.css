@@ -1,3 +1,7 @@
+/* *{
+  direction:rtl
+} */
+
 .mainWrapper{
   background-image: url('/assets/images/register.jpg');
 }
@@ -11,7 +15,6 @@ form{
 
 input +button{
   display: block;
-  /* background-color: var(--bg); */
   background-color: green;
 }
 

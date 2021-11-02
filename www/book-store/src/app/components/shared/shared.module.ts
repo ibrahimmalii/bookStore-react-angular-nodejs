@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     BookDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports :[
     HeaderComponent, FooterComponent, SidebarComponent, BookDetailsComponent
