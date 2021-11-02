@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
+  <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,61 +14,63 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            كورسات اكاديمية
+            الكورسات الاكاديمية
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">الهندسة</a></li>
-            <li><a class="dropdown-item" href="#">الاقتصاد المنزلي</a></li>
-            <li><a class="dropdown-item" href="#">الشريعة الإسلامية</a></li>
-            <li><a class="dropdown-item" href="#">الطب</a></li>
-            <li><a class="dropdown-item" href="#">الحقوق</a></li>
+            <li><a class="dropdown-item" (click)="getCatBooks('6172179ce9ef8ab21a899d85')" href="#">الاقتصاد المنزلي</a>
+            </li>
           </ul>
+        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             الدبلومات
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">اختبارات الدراسات التطبيقة</a></li>
-            <li><a class="dropdown-item" href="#">إدارة و اقتصاد</a></li>
-            <li><a class="dropdown-item" href="#">دبلومات مهنية</a></li>
-            <li><a class="dropdown-item" href="#">علم الاجتماع</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" (click)="getCatBooks('617217eae9ef8ab21a899d8c')" href="#">الإقتصاد و
+                الإدارة</a></li>
+            <li><a class="dropdown-item" (click)="getCatBooks('6172181be9ef8ab21a899d92')" href="#">علم مجتمع</a></li>
           </ul>
+        </li>
 
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            دراسات عليا
+            الدراسات العليا
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">الفنون و العلوم الانسانية</a></li>
-            <li><a class="dropdown-item" href="#">الادارة و الاقتصاد</a></li>
-            <li><a class="dropdown-item" href="#">العلوم</a></li>
-            <li><a class="dropdown-item" href="#">التعليم الخاص</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" (click)="getCatBooks('617217cfe9ef8ab21a899d8a')" href="#">الآداب و العلوم
+                الانسانية</a></li>
+            <li><a class="dropdown-item" (click)="getCatBooks('61721810e9ef8ab21a899d90')" href="#">إدراة و اقتصاد</a>
+            </li>
+            <li><a class="dropdown-item" (click)="getCatBooks('617217fce9ef8ab21a899d8e')" href="#">التعليم الخاص</a>
+            </li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">من نحن</a>
+        </li>
 
 
         <li class="nav-item">
           <a class="nav-link" href="#">تواصل معنا</a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">من نحن</a>
-        </li>
       </ul>
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">تسجيل الدخول</a>
+          <a class="nav-link" href="#">انشاء حساب</a>
         </li>
 
-
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">انشاء حساب</a>
+          <a class="nav-link" href="#">تسجيل الدخول</a>
         </li>
       </ul>
+
     </div>
   </div>
 </nav>
