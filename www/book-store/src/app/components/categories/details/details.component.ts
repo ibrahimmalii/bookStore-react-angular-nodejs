@@ -31,12 +31,14 @@ export class DetailsComponent implements OnInit {
   token = localStorage.token;
   id:number=0;
   headerObj={ headers: { 'Authorization': `Bearer ${this.token}` } };
-  constructor(private snackBar: MatSnackBar,private _DetailsService: DetailsService,private _activatedRoute: ActivatedRoute) {
+  constructor(private snackBar: MatSnackBar,private _DetailsService: DetailsService,private _activatedRoute: ActivatedRoute,private _formBuilder:FormBuilder) {
 
   }
 
   ngOnInit(): void {
-
+    this.form=this._formBuilder.group({
+        commentContent: ['',[Validators.maxLength(256),Validators.minLength(5)]]
+    })
 
      this.id = this._activatedRoute.snapshot.params.id;
     this._DetailsService.getBookDetails(this.id,this.headerObj).subscribe(

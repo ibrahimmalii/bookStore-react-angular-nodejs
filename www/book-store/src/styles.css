@@ -14,17 +14,24 @@
     --text: #868096;
 }
 
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
+.vertical-row{
+      height: 1px;
+      background-color: black;
+    /* you might need some positioning for this to work, see other questions about 100% height */
     width: 100%;
-}
+    border: 1px solid black;
 
-.example-full-width {
+
+  }
+  .border-line {
+    border: 1px solid #000;
+  }
+  .comment{
+    border-radius: 15px;
     width: 100%;
-}
+    background-color:#e6e6e6;
+  }
 
-
-/* 
+/*
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
