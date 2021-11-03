@@ -11,6 +11,9 @@ import { CardComponent } from './components/card/card.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {GoogleLoginProvider , FacebookLoginProvider} from 'angularx-social-login';
 import { AngularRaveModule } from 'angular-rave';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { AngularRaveModule } from 'angular-rave';
     AppRoutingModule,
     HttpClientModule,
     SocialLoginModule,
-    AngularRaveModule
+    AngularRaveModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     {
