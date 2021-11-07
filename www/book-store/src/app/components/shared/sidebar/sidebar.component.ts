@@ -13,6 +13,10 @@ export class SidebarComponent implements OnInit {
   // title ="";
   // @Input title:string ="";
   // @Input() Title = '';
+  // rating = 0;
+  // starCount = 5;
+
+  // ratingArr: boolean[] = [];
 
 
   constructor() { }
@@ -20,6 +24,13 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  // returnStar(i: number) {
+  //   if (this.rating >= i + 1) {
+  //     return 'star';
+  //   } else {
+  //     return 'star_border';
+  //   }
+  // }
   minValue: number = 100;
   maxValue: number = 400;
   options: Options = {
@@ -53,4 +64,6 @@ export class SidebarComponent implements OnInit {
   };
 
 
+
 }
+

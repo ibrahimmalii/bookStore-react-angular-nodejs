@@ -1,89 +1,88 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="ar">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mirza&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- <link rel="stylesheet" href="../sidebar/jQuery.UI.css"  /> -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
-  </head>
-  <body>
-    <div class="card">
-      <div class="name1">
-        <p class="title">البحث في الكتب</p>
-      </div>
-      <!-- [(ngModel)]="Title"
-      [(ngModel)]="title"
-      (input)="Search()" -->
-      <div class="card-body">
-        <div class="row">
-          <div class="input-group">
-            <input
-              type="search"
-              class="form-control rounded"
-              placeholder="البحث عن منتجات...."
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <div class="btn">
-              <button type="button" class="btn btn-danger">بحث</button>
-            </div>
+<div class="contanier">
+  <div class="card col col-md-12">
+    <div class="name1">
+      <p class="title">البحث في الكتب</p>
+    </div>
+    <!-- [(ngModel)]="Title"
+        [(ngModel)]="title"
+        (input)="Search()" -->
+    <!-- [(ngModel)]="title"
+        (input)="Search()" -->
+    <div class="card-body">
+      <div class="row">
+        <div class="input-group">
+          <input
+            type="search"
+            class="form-control rounded"
+            placeholder="البحث عن منتجات...."
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+          <div class="btn">
+            <button type="button" class="btn btn-danger">بحث</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="name2">
-        <p class="title">فلتر علي حسب السعر</p>
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="custom-slider">
-            <ngx-slider
-              [(value)]="minValue"
-              [(highValue)]="maxValue"
-              [options]="options"
-            ></ngx-slider>
-          </div>
-          <div class="fliter">
-            <button
-              type="button"
-              style="width: 100px"
-              class="btn btn-danger btn"
-            >
-              تصفية
-            </button>
-          </div>
+  </div>
+  <div class="card">
+    <div class="name2">
+      <p class="title">فلتر علي حسب السعر</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="custom-slider">
+          <ngx-slider
+            [(value)]="minValue"
+            [(highValue)]="maxValue"
+            [options]="options"
+          ></ngx-slider>
+        </div>
+        <div class="filter">
+          <button type="button" style="width: 100px" class="btn btn-danger btn">
+            تصفية
+          </button>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="name">
-        <p class="title">اقسام الكتب</p>
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <ul class="books-department">
-            <li class="department"><a href="#">عروض خاصة</a></li>
-            <li class="department"><a href="#">جامعة الملك خالد</a></li>
-            <li class="department"><a href="#">الدبلومات</a></li>
-            <li class="department"><a href="#">الدراسات العليا</a></li>
-            <li class="department"><a href="#">اصدارتنا</a></li>
-            <li class="department"><a href="#">الاتصال والاعلام</a></li>
-            <li class="department"><a href="#">الحقوق والعلوم</a></li>
-            <li class="department"><a href="#">السياسة</a></li>
-            <li class="department"><a href="#">العلوم</a></li>
-            <li class="department"><a href="#">التربية</a></li>
-            <li class="department"><a href="#">السنه التحضيرية</a></li>
-          </ul>
-        </div>
+  </div>
+  <div class="card">
+    <div class="name2">
+      <p class="title">التقييمات</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <h2>Star Rating</h2>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <i class="fa fa-star" aria-hidden="true"></i>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+  <div class="card">
+    <div class="name">
+      <p class="title">اقسام الكتب</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <ul class="books-department">
+          <li class="department"><a href="#">عروض خاصة</a></li>
+          <li class="department"><a href="#">جامعة الملك خالد</a></li>
+          <li class="department"><a href="#">الدبلومات</a></li>
+          <li class="department"><a href="#">الدراسات العليا</a></li>
+          <li class="department"><a href="#">اصدارتنا</a></li>
+          <li class="department"><a href="#">الاتصال والاعلام</a></li>
+          <li class="department"><a href="#">الحقوق والعلوم</a></li>
+          <li class="department"><a href="#">السياسة</a></li>
+          <li class="department"><a href="#">العلوم</a></li>
+          <li class="department"><a href="#">التربية</a></li>
+          <li class="department"><a href="#">السنه التحضيرية</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <i class="fa fa-star" aria-hidden="true" style="font-size: 40px"></i> -->

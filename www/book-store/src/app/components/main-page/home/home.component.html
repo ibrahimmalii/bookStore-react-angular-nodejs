@@ -1,14 +1,23 @@
 <app-header></app-header>
+<input
+  type="search"
+  [(ngModel)]="title"
+  (input)="Search()"
+  class="form-control rounded"
+  placeholder="البحث عن منتجات...."
+  aria-label="Search"
+  aria-describedby="search-addon"
+/>
 <div class="container">
   <div class="row" *ngIf="responseGet">
-    <div class="col col-md-11 col-lg-4">
+    <div class="col col-md-11 col-lg-3">
       <app-sidebar></app-sidebar>
     </div>
 
     <div class="col">
       <div class="row g-3">
         <div
-          class="col col-md-1 col-lg-8"
+          class="col col-md-1 col-lg-9"
           *ngFor="let book of books"
           style="width: 16rem"
         >
@@ -48,9 +57,21 @@
                 </button>
               </div>
 
-              <a href="#" class="btn btn-danger" id="addCart"
+              <!-- <a
+                href="#"
+                class="btn btn-danger"
+                id="addCart"
+                (click)="addCart(book)"
                 >الاضافة الي العربة</a
+              > -->
+              <button
+                type="button"
+                id="addCart"
+                class="btn btn-danger btn"
+                (click)="addCart(book)"
               >
+                الاضافة الي العربة
+              </button>
             </div>
           </div>
         </div>
