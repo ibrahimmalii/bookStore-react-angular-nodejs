@@ -10,7 +10,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule, SharedModule, RouterModule.forChild(routes)

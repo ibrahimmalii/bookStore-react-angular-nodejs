@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap');
+
+
+
+* {
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+
+
+
+
+
+
+.custom-button {
+  background-color:rgb(189, 159, 83);
+  color: rgb(250, 239, 239);
+
+  transition: all .5s ease-in;
+}
+
+.custom-button i {
+  transition: all .5s ease-in;
+}
+
+.custom-button:hover {
+  background-color: transparent;
+  border-color:rgb(189, 159, 83);
+
+  color: rgb(189, 159, 83);
+}
+
+
+.media img {
+  width: 50px;
+  border-radius: 50%;
+}
+.main{
+  background-color:rgb(29, 5, 85)
+}
+.background-img{
+  /* background-image: url("D:\finail project 2\bookStore-react-angular-nodejs\www\book-store\src\assets\images\background.jpg"); */
+  background-image: url("/assets/images/background.jpg");
+  opacity: .9;
+
+  height: 70vh;
+
+  /* Center and scale the image nicely */
+   background-attachment: fixed;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  background-size:cover
+}
+
+
+.card{
+  opacity:0.8;
+  background-color:rgba(1, 1, 5, 0.4)
+}
+.sec2{
+  background-color:rgba(252, 252, 252, 0.712)
+}
+
+
+.badge{
+  width:150px;
+  margin: 2px 5px;
+}
