@@ -4,14 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
-// import {MatIconModule} from '@angular/material/icon';
-
-// import { MaxLengthPipe } from './pipes/max-length.pipe';
-// import {NgPipesModule} from 'ngx-pipes';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,10 +13,11 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    BookDetailsComponent,
+    BookDetailsComponent
   ],
   imports: [
-    CommonModule,NgxSliderModule,
+    CommonModule,
+    RouterModule
   ],
   exports :[
     HeaderComponent, FooterComponent, SidebarComponent, BookDetailsComponent

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div id="parent" class='pt-5'>
   <!-- alert for update data successfully -->
   <div *ngIf="isLoginSuccess" class="alert alert-info alert-dismissible fade show" role="alert">
@@ -19,31 +20,31 @@
 <!-- Start Login From -->
 <form [formGroup]="form" class="mt-5">
     <div class="mb-3">
-      <label for="exampleInputemail1" class="form-label text-light">email address</label>
+      <label for="exampleInputemail1" class="form-label text-light">البريد الالكترونى</label>
       <input type="email" class="form-control" name='email' formControlName="email">
 
     <div *ngIf="form.controls.email.invalid && isLogged || (form.controls.email.dirty || form.controls.email.touched)">
-        <small class="text-danger fw-bold mb-3 " *ngIf="form.controls.email.hasError( 'required') ">email is required</small>
-        <small class="text-danger fw-bold mb-3 " *ngIf="form.controls.email.hasError( 'minlength') ">You have to write more than 5 characters</small>
+        <small class="text-warning fw-bold mb-3 " *ngIf="form.controls.email.hasError( 'required') ">email is required</small>
+        <small class="text-warning fw-bold mb-3 " *ngIf="form.controls.email.hasError( 'minlength') ">You have to write more than 5 characters</small>
     </div>
     </div>
     <div class="mb-3">
-      <label for="exampleInputpassword1" class="form-label text-light">password</label>
+      <label for="exampleInputpassword1" class="form-label text-light">الرقم السرى</label>
       <input type="password" class="form-control" formControlName='password'>
      <div *ngIf="form.controls.password.invalid && isLogged || (form.controls.password.dirty || form.controls.password.touched)">
-        <small class="text-danger fw-bold mb-3 " *ngIf="form.controls.password.hasError( 'required') ">password is required</small>
-        <small class="text-danger fw-bold mb-3 " *ngIf="form.controls.password.hasError( 'minlength') ">You have to write more than 8 characters</small>
-        <small class="text-danger fw-bold mb-3 " *ngIf="form.controls.password.hasError( 'maxlength') ">You have to write less than 15 characters</small>
+        <small class="text-warning fw-bold mb-3 " *ngIf="form.controls.password.hasError( 'required') ">password is required</small>
+        <small class="text-warning fw-bold mb-3 " *ngIf="form.controls.password.hasError( 'minlength') ">You have to write more than 8 characters</small>
+        <small class="text-warning fw-bold mb-3 " *ngIf="form.controls.password.hasError( 'maxlength') ">You have to write less than 15 characters</small>
      </div>
     </div>
     <div class="submit text-center mt-2 pt-2">
-      <button type="submit" (click)='login()' [ngClass]="{'bg-success text-light' : form.valid}" class="btn text-light fw-bold  w-75">Submit</button><br>
+      <button type="submit" (click)='login()' [ngClass]="{'bg-success text-light' : form.valid}" class="btn text-light fw-bold  w-75">تأكيد</button><br>
     </div>
 </form>
 
 <!-- Register Link -->
 <div class="new-patreon text-center">
-  <p class="h6 text-light">Don't have an account?  <a routerLink="/auth/register">Sign Up</a></p>
+  <p class="h6 text-light">هل نسيت كلمة السر؟  <a routerLink="/auth/register">إنشاء حساب</a></p>
 </div>
 
 </div>

@@ -1,0 +1,114 @@
+<app-header></app-header>
+<div class="main" dir="rtl">
+<div class="container-fluid">
+
+
+  <div class="row background-img" >
+
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+
+<div class="col-md-12 col-lg-10 mr-lg-5 " >
+<div class="card  mb-3 col-12 mt-5">
+  <div class="row g-0 ">
+    <div class="col-md-11 col-lg-6" >
+            <img class="img img-fluid mt-3 mb-3 w-100" src="http://localhost:8080/api/books/{{card._id}}/avatar" />
+    </div>
+    <div class="col-md-11 col-lg-6">
+      <div class="card-body">
+        <h1 class="card-title text-white " dir="rtl">{{card.title}}</h1>
+        <p class="card-text text-white">{{card.description}}</p>
+      </div>
+    </div>
+    <span dir="rtl" class="mt-3">
+      <span class="float-end mr-lg-3 mb-3">
+                 <span class=" badge badge-danger  badge-pill mr-2    ml-3" >
+                            <h3>  الناشر {{card.author}} </h3>
+
+                        </span>
+
+                        <span class=" badge badge-danger  badge-pill ml-3 ">
+                            <h3> عدد الصفحات 200 </h3>
+
+                        </span>
+                        <span class=" badge badge-danger  badge-pill ml-lg-3 ">
+                            <h3>  السعر {{card.price}} </h3>
+
+                        </span>
+                </span>
+                        <button type="button" class="btn rounded-pill btn-lg custom-button ml-3    mr-5">اضف  الي العربة <i class="fa fa-shopping-cart"></i></button>
+</span>
+  </div>
+</div>
+
+              <div class="pull-right mr-3 mt-3">
+               <h1 class="text-end fw-bold mt-5 text-light">من فضلك قم بتقيم الكتاب </h1>
+            <!-- Display an array of star/star_border buttons -->
+
+            <button mat-icon-button class="btn btn-lg border-0 text-warning " *ngFor="let r of ratingArr; index as i" (click)="makeRate(i)">
+              <mat-icon>
+                {{ returnStar(i) }}
+              </mat-icon>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="container-fluid sec2">
+<div class="container  "*ngIf ="form">
+  <div class="row col-md-12 col-lg-12  ">
+    <form [formGroup]="form" class= "col-md-12  col-lg-8 ">
+    <h1  class="float-right text-light mt-5"> التعليقات </h1>
+   <div class="input-group">
+  <textarea class="form-control comment" formControlName="commentContent"  placeholder="اترك تعليقاً" #comment></textarea>
+</div>
+<button type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2" (click)="pushComment(comment.value);comment.value=''"> نشر<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+<br>
+<br>
+<br>
+
+                <div class="vertical-row"></div>
+                <div>
+                  <ul class="list-group "  *ngFor="let comment of comments">
+                    <li class="list-group-item border  mt-2 border-3  commented">
+                         <span class="media text-right mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/84.jpg" class="ml-3" alt="...">
+                        <div class="media-body">
+                          <h5 class="mt-0">amr gamal&nbsp;
+
+                          </h5>
+                          <p>
+                            {{comment.description}}
+                          </p>
+                        </div>
+                    </span>
+                    </li>
+
+                  </ul>
+                </div>
+              </form>
+              <div class="col-md-9 col-lg-2  text-center">
+                        <h1 class="mt-4 fw-1  text-center text-light fw-bold">الكتب المشابهة</h1>
+                        <div class="text-center ml-5">
+                            <img class="img" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483351335l/33699165.jpg" class="mt-3 shadow"  alt="...">
+                            <p class="mt-4 mb-3">
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star"></i>
+                            </p>
+
+                            <button type="button" class="btn rounded-pill btn-outline-dark mb-3">الاطلاع علي التفاصيل</button>
+                        </div>
+                    </div>
+            </div>
+
+
+</div>
+         </div>
+</div>
+<app-footer></app-footer>
