@@ -1,1 +1,102 @@
-<p>sidebar works!</p>
+<div class="contanier">
+  <div class="card col col-md-12">
+    <div class="name1">
+      <p class="title">البحث في الكتب</p>
+    </div>
+    <!-- [(ngModel)]="Title"
+        [(ngModel)]="title"
+        (input)="Search()" -->
+    <!-- [(ngModel)]="title"
+        (input)="Search()" -->
+    <div class="card-body">
+      <div class="row">
+        <div class="input-group">
+          <input
+            class="form-control rounded"
+            placeholder="البحث عن منتجات...."
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+          <div class="btn">
+            <button type="button" class="btn btn-danger">بحث</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="name2">
+      <p class="title">فلتر علي حسب السعر</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="custom-slider">
+          <ngx-slider
+            [(value)]="minValue"
+            [(highValue)]="maxValue"
+            [options]="options"
+          ></ngx-slider>
+        </div>
+        <div class="filter">
+          <button type="button" style="width: 100px" class="btn btn-danger btn">
+            تصفية
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="name2">
+      <p class="title">التقييمات</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div>
+          <div>
+            <i class="fa fa-star text-primary"></i>
+            <i class="fa fa-star text-primary"></i>
+            <i class="fa fa-star text-primary"></i>
+            <i class="fa fa-star text-primary"></i>
+            <i class="fa fa-star text-primary"></i>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div>
+        <i class="fa fa-star text-primary"></i>
+        <i class="fa fa-star text-primary"></i>
+        <i class="fa fa-star text-primary"></i>
+        <i class="fa fa-star text-primary"></i>
+        <i class="fa fa-star gr"></i>
+      </div>
+      <div>
+        <i class="fa fa-star text-primary"></i>
+        <i class="fa fa-star text-primary"></i>
+        <i class="fa fa-star text-primary"></i>
+        <i class="fa fa-star gr"></i>
+        <i class="fa fa-star gr"></i>
+      </div>
+    </div>
+    <br />
+    <div></div>
+    <!-- <i class="fa fa-star" aria-hidden="true" style="font-size: 40px"></i> -->
+  </div>
+  <div class="card">
+    <div class="name">
+      <p class="title">اقسام الكتب</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <ul class="books-department">
+          <li class="department"><a href="#">الدبلومات</a></li>
+          <li class="department"><a href="#">الدراسات العليا</a></li>
+          <li class="department"><a href="#">الاتصال والاعلام</a></li>
+          <li class="department"><a href="#">الحقوق والعلوم</a></li>
+          <li class="department"><a href="#">السياسة</a></li>
+          <li class="department"><a href="#">العلوم</a></li>
+          <li class="department"><a href="#">التربية</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

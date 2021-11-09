@@ -1,18 +1,70 @@
 <app-header></app-header>
 <div class="container">
-  <div class="row" *ngIf="responseGet">
+  <div class="row">
     <div class="col-8">
-      <div class="row g-3" *ngFor="let book of books">
-        <div class="col-3 card">
+      <div class="container">
+        <div class="row g-3">
+          <div
+            class="col-4 card"
+            *ngFor="let book of books"
+            style="width: 16rem"
+          >
+            <div class="card text-center">
+              <img
+                src="http://localhost:8080/api/books/{{ book._id }}/avatar"
+              />
+              <div class="card-body">
+                <h3>المؤلف : {{ book.author }}</h3>
+                <h5 class="card-title">
+                  <!-- maxLength: 22:"....." -->
+                  {{ book.title }}
+                </h5>
+                <span class="badge rounded-pill bg-primary" id="price">
+                  {{ book.price }} جنيه
+                </span>
 
-          <img src="http://localhost:8080/api/books/{{book._id}}/avatar">
-          <div class="card-body">
-            <h3>Author: {{book.author}}</h3>
-            <p>Title: {{book.title}}</p>
-            <span>Price: {{book.price}}</span><br>
-            <span>Rate: {{book.rate}}</span>
+                <!-- <div class="price">
+                    <h5>{{ book.price }}</h5>
+                  </div> -->
+                <!-- (input)="stars(book)" -->
+
+                <div class="rateing">
+                  <!-- <div class="hidden">
+                      {{ getCarruntRate(book.rate) }}
+                    </div> -->
+                  <p hidden>
+                    {{ getCarruntRate(book.rate) }}
+                  </p>
+
+                  <button
+                    mat-icon-button
+                    class="btn text-warning"
+                    *ngFor="let r of ratingArr; index as i"
+                  >
+                    <mat-icon>
+                      {{ returnStar(i) }}
+                    </mat-icon>
+                  </button>
+                </div>
+
+                <!-- <a
+                  href="#"
+                  class="btn btn-danger"
+                  id="addCart"
+                  (click)="addCart(book)"
+                  >الاضافة الي العربة</a
+                > -->
+                <button
+                  type="button"
+                  id="addCart"
+                  class="btn btn-danger btn"
+                  (click)="addCart(book)"
+                >
+                  الاضافة الي العربة
+                </button>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { ApiService } from './../../../services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../../services/user.service'
 
 
 @Component({
@@ -9,11 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  title ="";
+  // Title ="";
+  rating = 0;
+  starCount = 5;
 
-  constructor(private apiService: ApiService) { }
+  ratingArr: boolean[] = [];
+  constructor(private apiService: ApiService ,private userService: UserService) {
 
+  }
   users: any;
-  books: any;
+ books: any;
   responseGet: Boolean = false
 
   ngOnInit(): void {
@@ -30,8 +37,74 @@ export class HomeComponent implements OnInit {
       .subscribe(res => {
         console.log(res)
         this.books = res;
-        this.responseGet = true
+        this.responseGet = true;
+        this.ratingArr = Array(this.starCount).fill(false);
+
       })
   }
+  Search() {
+    console.log(this.title)
+    if (this.title != "") {
+      this.books = this.books.filter((res: { title: string; }) => {
+        return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
+      });
+    }
+    else if (this.title == "") {
+      this.ngOnInit();
+    }
+  }
+  returnStar(i: number) {
+    if (this.rating >= i + 1) {
+      return 'star';
+    } else {
+      return 'star_border';
+    }
+  }
+//   stars(book: { rate: number; }){
+// this.rating=book.rate;
+//   }
+getCarruntRate(num:number){
+
+  return this.rating=num;
+}
+ itemCart :any =[];
+addCart(book :any){
+console.log(book);
+let carDataNull =localStorage.getItem('localCart');
+if(carDataNull == null){
+  let storeDataGet :any =[];
+  storeDataGet.push(book);
+  localStorage.setItem("localCart",JSON.stringify(storeDataGet));
+}
+else{
+  var id = book._id;
+  let index :number= -1;
+  this.itemCart =JSON.parse((localStorage.getItem("localCart"))!)  ;
+  for(let i=0; i<this.itemCart.length;i++){
+    if(parseInt(id) ===parseInt(this.itemCart[i]._id)){
+     this.itemCart[i].amount =book.amount;
+     index =i;
+     break;
+    }
+  }
+  if(index==-1){
+    this.itemCart.push(book);
+    localStorage.setItem("localCart",JSON.stringify(this.itemCart))
+  }else{
+    localStorage.setItem("localCart",JSON.stringify(this.itemCart))
+  }
+}
+this.cartNumberFunc();
+// localStorage.setItem("localCart",JSON.stringify(book))
+}
+
+cartNumber:number =0;
+
+cartNumberFunc(){
+  var cartValue =JSON.parse( localStorage.getItem('localCart')!);
+ this.cartNumber= cartValue.length;
+ this.userService.cartSubject.next(this.cartNumber)
+//  console.log(this.cartNumber);
+}
 
 }

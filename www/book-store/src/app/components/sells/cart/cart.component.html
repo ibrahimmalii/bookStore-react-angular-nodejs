@@ -1,4 +1,4 @@
-<h2 class="text-center mt-3">BASKET</h2>
+<!-- <h2 class="text-center mt-3">BASKET</h2>
 <table class="text-center w-100 container mt-5">
     <tr class="header">
         <th>البضائع</th>
@@ -8,8 +8,8 @@
     </tr>
     <tr>
         <!-- <tr *ngFor="let item of list" let currentIndex = index> -->
-        <!-- <td>{{currentIndex + 1}}</td> -->
-        <td class="text-success font-weight-bold" style="font-size: 20px;">{{images}}</td>
+<!-- <td>{{currentIndex + 1}}</td> -->
+<!-- <td class="text-success font-weight-bold" style="font-size: 20px;">{{images}}</td>
         <td class="text-success font-weight-bold"  style="font-size: 20px;">{{price}}</td>
         <td class="text-success font-weight-bold" style="font-size: 20px;"><input
                 type="number" step="1" min="0" max="33" (change)='getQuantity(inputQuantity.value)' value="1" #inputQuantity></td>
@@ -39,4 +39,199 @@
     <div class="card-footer text-center">
         <a routerLink="/sells/information" class="btn btn-success w-50">التقدم لأتمام الطلب</a>
     </div>
-</div>
+</div>  -->
+
+<!-- <section class="cart_section">
+  <div class="container">
+    <h2>عربة المشتريات</h2>
+    <table>
+      <tr>
+        <th>الكتاب</th>
+        <th>السعر</th>
+        <th>الكميه</th>
+        <th>الاجمالي</th>
+      </tr>
+      <tr *ngFor="let getCartDetaile of getCartDetailes">
+        <td>
+          <img
+            src="http://localhost:8080/api/books/{{
+              getCartDetaile._id
+            }}/avatar"
+          />
+          <p>{{ getCartDetaile.title }}</p>
+        </td>
+        <td>{{ getCartDetaile.price }}</td>
+        <td>
+          <div class="content">
+            <button
+              type="button"
+              class="btn"
+              (click)="incQnt(getCartDetaile._id, getCartDetaile.amount)"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+            <span>{{ getCartDetaile.amount }}</span>
+            <button
+              type="button"
+              class="btn"
+              (click)="decQnt(getCartDetaile._id, getCartDetaile.amount)"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </td>
+        <td>{{ getCartDetaile.amount * getCartDetaile.price | number }}</td>
+      </tr>
+    </table>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>الاجمالي :{{ total }}</h3>
+      </div>
+    </div>
+  </div>
+</section> -->
+<body>
+  <div class="container px-3 my-5 clearfix">
+    <!-- Shopping cart table -->
+    <div class="card">
+      <div class="card-header">
+        <h2>عربة التسوق</h2>
+      </div>
+      <div *ngIf="getCartDetailes">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered m-0">
+              <thead>
+                <tr>
+                  <!-- Set columns width -->
+                  <th class="text-center py-3 px-4" style="min-width: 300px">
+                    اسم الكتاب &amp; التفاصيل
+                  </th>
+                  <th class="text-right py-3 px-4" style="width: 100px">
+                    السعر
+                  </th>
+                  <th class="text-center py-3 px-4" style="width: 120px">
+                    الكمية
+                  </th>
+                  <th class="text-right py-3 px-4" style="width: 100px">
+                    الاجمالي
+                  </th>
+                  <th
+                    class="text-center align-middle py-3 px-0"
+                    style="width: 40px"
+                  >
+                    <a
+                      href="#"
+                      class="shop-tooltip float-none text-light"
+                      title=""
+                      data-original-title="Clear cart"
+                      ><i class="ino ion-md-trash"></i
+                    ></a>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let getCartDetaile of getCartDetailes">
+                  <td class="p-4">
+                    <div class="media align-items-center">
+                      <img
+                        src="http://localhost:8080/api/books/{{
+                          getCartDetaile._id
+                        }}/avatar"
+                        class="d-block ui-w-50"
+                        alt=""
+                      />
+                      <div class="media-body">
+                        <p style="font-size: 15px; font-weight: 900">
+                          عنوان الكتاب : {{ getCartDetaile.title }}
+                        </p>
+                        <p>
+                          <span class="text-muted">{{
+                            getCartDetaile.author
+                          }}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-right font-weight-semibold align-middle p-4">
+                    {{ getCartDetaile.price }} جنيه
+                  </td>
+                  <td class="align-middle p-4">
+                    <div class="content">
+                      <button
+                        type="button"
+                        class="btns"
+                        (click)="
+                          incQnt(getCartDetaile._id, getCartDetaile.amount)
+                        "
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                      <span>{{ getCartDetaile.amount }}</span>
+                      <button
+                        type="button"
+                        class="btns"
+                        (click)="
+                          decQnt(getCartDetaile._id, getCartDetaile.amount)
+                        "
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td class="text-right font-weight-semibold align-middle p-4">
+                    {{ getCartDetaile.amount * getCartDetaile.price | number }}
+                  </td>
+                  <td class="text-center align-middle px-0">
+                    <a
+                      href="#"
+                      class="shop-tooltip close float-none text-danger"
+                      title=""
+                      data-original-title="Remove"
+                      >×</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- / Shopping cart table -->
+
+          <div
+            class="
+              d-flex
+              flex-wrap
+              justify-content-between
+              align-items-center
+              pb-4
+            "
+          >
+            <div class="d-flex">
+              <div class="text-right mt-4">
+                <label class="text-muted font-weight-normal m-0"
+                  >الاجمالي</label
+                >
+                <div class="text-large">
+                  <strong> {{ total }} جنيه</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-right">
+            <button type="button" class="btn btn-lg btn-primary mt-2">
+              تأكيد الطلب
+            </button>
+          </div>
+          <button
+            type="button"
+            class="btn btn-lg btn-danger mt-2"
+            (click)="removeAll()"
+          >
+            حذف كل المشتريات
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

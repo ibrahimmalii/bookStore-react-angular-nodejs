@@ -3,6 +3,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
 import { ApiService } from './api.service';
 import { environment } from './../../environments/environment.prod';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -54,4 +55,5 @@ export class UserService {
   oAuthSignup(body: any){
     return this.apiService.post(this.OAuthUrl, body);
   }
+  cartSubject =new Subject<any>();
 }
