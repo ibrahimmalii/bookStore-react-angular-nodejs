@@ -8,8 +8,7 @@ router.post('/:id', auth,async (req, res)=>{
     const {id} = req.params
     const {description} = req.body 
     try{    
-        const comment = await new Comment({description, ownerId: user._id, bookId : id}).save()
-        console.log(comment)
+        const comment = await new Comment({description, ownerName: user.name, bookId : id}).save()
         res.send(comment)
     } catch (e) {
         res.status(500).json()
