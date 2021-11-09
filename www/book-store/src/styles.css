@@ -13,7 +13,6 @@
     --bg: #fff6f4;
     --h5: #FFFB1A;
     --text: #868096;
-<<<<<<< HEAD
 }
 
 .vertical-row{
@@ -34,28 +33,6 @@
 *{
   direction:rtl;
 }
-=======
-}
-
-.vertical-row{
-      height: 1px;
-      background-color: black;
-    /* you might need some positioning for this to work, see other questions about 100% height */
-    width: 100%;
-    border: 1px solid black;
-
-
-  }
-  .border-line {
-    border: 1px solid #000;
-  }
-  .comment{
-    border-radius: 15px;
-    width: 100%;
-    background-color:#e6e6e6;
-  }
-
->>>>>>> 78c2f7e6eba5164c48d64a12d73eed015804be87
 /*
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
