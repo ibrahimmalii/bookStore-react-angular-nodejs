@@ -8,8 +8,13 @@ const commentSchema = new Schema({
         trim: true,
         lowercase: true
     },
-    ownerId: {
-        type: mongoose.Schema.Types.ObjectId,
+    // ownerId: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     required: true,
+    //     ref: 'User'
+    // },
+    ownerName: {
+        type: String,
         required: true,
         ref: 'User'
     },

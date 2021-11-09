@@ -15,4 +15,10 @@ export class DetailsService {
 addBookComment(id:number, body:any,headers: any){
   return this._apisevice.post(`http://localhost:8080/api/comments/${id}`,body,headers);
 }
+updateBookRate(id:number, body:any,headers:any){
+return this._apisevice.put(`http://localhost:8080/api/books/update/${id}`,body,headers);
+}
+getAllCategoryBooks(id:number,headers:any){
+return this._apisevice.get(`http://localhost:8080/api/categories/${id}`,headers);
+}
 }

@@ -109,5 +109,16 @@ router.delete('/me', auth, async (req, res) => {
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const {id} = req.params
+        const user = User.findByIdAndRemove(id)
+        await user.remove()
+        res.json(req.user)
+    } catch (e) {
+        res.status(400).json(e)
+    }
+})
+
 
 module.exports = router

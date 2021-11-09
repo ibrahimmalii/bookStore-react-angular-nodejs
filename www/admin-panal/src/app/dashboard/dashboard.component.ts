@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import * as Chartist from 'chartist';
 
 @Component({
@@ -57,9 +58,16 @@ export class DashboardComponent implements OnInit {
       return "rgb(" + r + ", " + g + ", " + b + ")";
     }
   }
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  users:any;
+  isPageLoaded:boolean = false
 
   ngOnInit() {
+    this.http.get('http://localhost:8080/api/users').subscribe((response)=>{
+      this.users = response
+      this.isPageLoaded = true
+    })
+
     this.chartColor = "#FFFFFF";
     this.canvas = document.getElementById("bigDashboardChart");
     this.ctx = this.canvas.getContext("2d");

@@ -1,7 +1,7 @@
-import { HomeComponent } from './components/main-page/home/home.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -10,6 +10,7 @@ const routes: Routes = [
   },{
     path: 'categories',
     loadChildren: () => import('./components/categories/categories.module').then(m => m.CategoriesModule)
+    ,canActivate:[AuthGuard]
   },{
     path: 'sells',
     loadChildren: () => import('./components/sells/sells.module').then(m => m.SellsModule)
