@@ -1,0 +1,304 @@
+[33mcommit e266a561a6fe1f0607371afd70447b0bc62288fd[m[33m ([m[1;36mHEAD -> [m[1;32mamr_details[m[33m, [m[1;31morigin/mohamedhossam[m[33m)[m
+Merge: 437073a 9feafaf
+Author: MohamedHossameldenhabishie <mohammedhossamelden10@gmail.com>
+Date:   Mon Nov 8 02:00:10 2021 +0200
+
+    add home and sideba with search agian
+
+[33mcommit 437073ac988abd734ea8351d19fd5faaa1fcf3fc[m
+Author: MohamedHossameldenhabishie <mohammedhossamelden10@gmail.com>
+Date:   Mon Nov 8 01:53:24 2021 +0200
+
+    add home and sideba with search
+
+[33mcommit 9feafafe3c8f90facdc6d468975a23170d46274b[m[33m ([m[1;31morigin/amr_details[m[33m)[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Mon Nov 8 00:47:54 2021 +0200
+
+    collect all fills ver-1
+
+[33mcommit bc48851f0d26203ebcffa5facc90caca809918a6[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Sun Nov 7 13:52:40 2021 +0200
+
+    new design of details app
+
+[33mcommit 87e0bd5e9c5dc28e6775c353c534470d78a47771[m
+Author: MohamedHossameldenhabishie <mohammedhossamelden10@gmail.com>
+Date:   Sat Nov 6 13:00:21 2021 +0200
+
+    add home and sidebar
+
+[33mcommit 409d2fdc97977e2ac49c276c65ce19be9c201237[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Thu Nov 4 12:19:43 2021 +0200
+
+    comments and rating from and to api
+
+[33mcommit 6c5fab8428552d670b8acf78a36428f89cebc26c[m
+Merge: 275193e 675ad43
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Wed Nov 3 18:56:50 2021 +0200
+
+    Merge branch 'ibrahim' of https://github.com/ibrahimmalii/bookStore-react-angular-nodejs into amr_details
+
+[33mcommit 275193ea5ca0af433d18c47f979d765f9fc01094[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Wed Nov 3 18:56:30 2021 +0200
+
+    comments and rating after update
+
+[33mcommit 675ad43c9928b9a550948ae2f0099014c520e859[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Wed Nov 3 17:41:57 2021 +0200
+
+    update route
+
+[33mcommit 5356ccf42fe57404732ef0223d98a1e2bbf3f265[m
+Merge: 0e21902 294a4a4
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Wed Nov 3 15:59:19 2021 +0200
+
+    update route edit in book
+
+[33mcommit 0e219020f1059c8f710cff377d28a285c3cf2566[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Tue Nov 2 22:23:01 2021 +0200
+
+    update in navbar
+
+[33mcommit 26b24d18c1c2d527080ec57bee3fc03f8c394ac1[m
+Merge: e7cd782 e25fbd0
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Tue Nov 2 20:47:39 2021 +0200
+
+    merge nav logic
+
+[33mcommit e7cd7822fa62cdb916231ec3286c2f460d34b058[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Tue Nov 2 20:37:47 2021 +0200
+
+    merge navbar
+
+[33mcommit e25fbd0036f5197f0484a990e664fd6ac0f5aa5c[m
+Author: George Samy <george.samy2011@gmail.com>
+Date:   Tue Nov 2 20:05:27 2021 +0200
+
+    navbar added
+
+[33mcommit 294a4a435403eea823201bb11c54193faaa8d9af[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Tue Nov 2 10:01:58 2021 +0200
+
+    simple design for details page
+
+[33mcommit 45bc3825bc5ce70c92cc82033a432c47c4565302[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 4676272 f43b615
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Tue Nov 2 00:51:48 2021 +0200
+
+    Merge branch 'ibrahim' of https://github.com/ibrahimmalii/bookStore-react-angular-nodejs
+
+[33mcommit 4676272eeca21e447077c627a3c35a09e489f475[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Tue Nov 2 00:51:37 2021 +0200
+
+    before push rate
+
+[33mcommit f43b615c420bec4fa2323f68e6ac1c5affa66c0e[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Tue Nov 2 00:48:37 2021 +0200
+
+    add route for update book
+
+[33mcommit 3f1b319ab533a429890ff746c3a804a75feabaca[m
+Merge: dc08e1a 90755f8
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Mon Nov 1 02:33:12 2021 +0200
+
+    merge back-end
+
+[33mcommit dc08e1a4d19ed0348816ff349dae8080ef1654a3[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Mon Nov 1 02:30:56 2021 +0200
+
+    comments and stars
+
+[33mcommit 7e400029c12f4de082ff7d0fcb524ab8d95b4d49[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Mon Nov 1 02:29:47 2021 +0200
+
+    base code for me
+
+[33mcommit 90755f8f69eadca05f800e7c2869527878d9d662[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sun Oct 31 17:44:18 2021 +0200
+
+    update packages
+
+[33mcommit 78fdcaef7cc7ef86306d8107bbc7f8560af4cabb[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 30 06:19:34 2021 +0200
+
+    update repo
+
+[33mcommit 805b2d7b6f4dacffe14f7da8bcae170c5fc7a2d0[m[33m ([m[1;31morigin/amr_detailes[m[33m)[m
+Merge: 8274d6e e390093
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Sat Oct 30 05:49:31 2021 +0200
+
+    test for comment and stars after changes
+
+[33mcommit 8274d6e0a147baf7916dbc27868d13094b901b95[m
+Merge: d971433 69c5d95
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Sat Oct 30 05:41:19 2021 +0200
+
+    test for comment and stars
+
+[33mcommit e39009320c6a0419ce8b7ff9aa9b73facd8592bf[m
+Merge: b9ec460 f795335
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 30 05:22:29 2021 +0200
+
+    merging
+
+[33mcommit d971433aea9ae899aa6cb9706fe4eb2ad58cfb84[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Sat Oct 30 03:07:05 2021 +0200
+
+    test for comment changes
+
+[33mcommit b9ec460d55d9f53bf3de2a5c79626319498debee[m
+Merge: 69c5d95 79c3983
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 30 01:17:56 2021 +0200
+
+    Merge branch 'george_navbar' of https://github.com/ibrahimmalii/bookStore-react-angular-nodejs into ibrahim
+
+[33mcommit 69c5d95f8ddecb60d8432f764772311fb2bcd498[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 30 01:14:06 2021 +0200
+
+    latest update
+
+[33mcommit f79533580049ac9366ea893cf9dd0b0bf294fe85[m
+Author: amrgamal00772 <amrgamal00772@gmail.com>
+Date:   Fri Oct 29 22:30:10 2021 +0200
+
+    detailes templet
+
+[33mcommit 79c3983656c5dcd3783190530bc372e6f7b1a052[m[33m ([m[1;31morigin/george_navbar[m[33m)[m
+Author: George Samy <george.samy2011@gmail.com>
+Date:   Fri Oct 29 21:43:21 2021 +0200
+
+    added navbar design
+
+[33mcommit a13efb6e615434b4623c0ce43c6447b4a5baa497[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Wed Oct 27 23:03:42 2021 +0200
+
+    add paypal method
+
+[33mcommit ac9ae141f35b3f950f528ad07d77b4a743ed97af[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Mon Oct 25 01:36:46 2021 +0200
+
+    update routes and add stripe method
+
+[33mcommit 7c4e9d1c3ccc3f9d89d4ac071bb79927396d069d[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 23 01:04:52 2021 +0200
+
+    add assets to gitignore
+
+[33mcommit 5b4b553f6d8f005a14cfb3ba1d7a29e27b354511[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 23 01:01:44 2021 +0200
+
+    update structure in angular and nodejs
+
+[33mcommit 6ce95595ffe2a5494d3681e63c6709baa6f4dfd0[m
+Merge: 5576b63 0393294
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 23 00:30:11 2021 +0200
+
+    merging with mohamed hossam
+
+[33mcommit 5576b63e11ff777081f50abb649257567bbfe90f[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 23 00:27:46 2021 +0200
+
+    add backend structure and handle routes with insert an api
+
+[33mcommit dce54806438c6f25966d799d8f62f81bcd321108[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 23 00:26:54 2021 +0200
+
+    add structure and auth process
+
+[33mcommit d56d3a9302153642b080b03befaf9c0e98b508b5[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 23 00:25:17 2021 +0200
+
+    add structure and auth process
+
+[33mcommit 03932946b7a528d04352fa88e4ade17395bda755[m[33m ([m[1;31morigin/mohamedHossam[m[33m)[m
+Author: MohamedHossameldenhabishie <mohammedhossamelden10@gmail.com>
+Date:   Fri Oct 22 00:56:20 2021 +0200
+
+    add footer snd sidebar
+
+[33mcommit 20113735f7641f895a48e92120d22606b389685b[m
+Author: MohamedHossameldenhabishie <mohammedhossamelden10@gmail.com>
+Date:   Sat Oct 16 17:20:24 2021 +0200
+
+    add package-lock.json
+
+[33mcommit c71ce0e593165c00cdd40dfc1d30742c0bee3724[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 16 04:10:39 2021 +0200
+
+    add routes and all pakage to angular project
+
+[33mcommit 9c5f8a3f026fa6eaaf5099736af1f9d73d57933b[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Sat Oct 16 04:09:10 2021 +0200
+
+    add project structure
+
+[33mcommit 96c5bcea349e4794d2ee65d07c250378e1a1dce2[m
+Author: Ibrahim Ali Mohamed <85004555+ibrahimmalii@users.noreply.github.com>
+Date:   Sat Oct 16 01:56:25 2021 +0200
+
+    Update README.md
+
+[33mcommit 4d9b433f54a79363bf6df552aab0a6029419549e[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Thu Oct 14 22:03:42 2021 +0200
+
+    setub bootstrap and fontawesome and axios with router
+
+[33mcommit 7556bed43b76c0d66e36a56ca03fcf9e6f3933ff[m
+Author: ibrahimmalii <eng.ibrahimmalii@gmail.com>
+Date:   Thu Oct 14 21:51:55 2021 +0200
+
+    add project files
+
+[33mcommit ddf1b20ea8bab77cb2c3b3dd2c8552d57641edcb[m
+Author: Ibrahim Ali Mohamed <85004555+ibrahimmalii@users.noreply.github.com>
+Date:   Thu Oct 14 21:24:40 2021 +0200
+
+    Update README.md
+
+[33mcommit b6b74fae3bcef7a70c40ac07048613ecb5bae2ad[m
+Author: Ibrahim Ali Mohamed <85004555+ibrahimmalii@users.noreply.github.com>
+Date:   Thu Oct 14 21:24:18 2021 +0200
+
+    Update README.md
+
+[33mcommit 39fdb7a1067ae9a66913fe64360814e8ed715c99[m
+Author: Ibrahim Ali Mohamed <85004555+ibrahimmalii@users.noreply.github.com>
+Date:   Thu Oct 14 13:35:41 2021 +0200
+
+    Initial commit
