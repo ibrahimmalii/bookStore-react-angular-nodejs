@@ -1,5 +1,6 @@
 import { ApiService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private userService: UserService) { }
 
   books: any;
   responseGet: Boolean = false
@@ -28,5 +29,18 @@ export class HeaderComponent implements OnInit {
       (err => {
         console.log(err);
       }))
+  }
+
+  getUserName():string{
+    const user = JSON.parse(localStorage.user);
+    return user.name
+  }
+
+  logout(){
+    this.userService.logout();
+  }
+
+  logStatus(): boolean{
+    return this.userService.isLogged();
   }
 }
