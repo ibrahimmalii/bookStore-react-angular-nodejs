@@ -1,1 +1,61 @@
-<p>sidebar works!</p>
+<link href="https://fonts.googleapis.com/css2?family=Mirza&display=swap" rel="stylesheet" />
+
+
+<div class="card">
+  <div class="name1">
+    <p class="title">البحث في الكتب</p>
+  </div>
+  <!-- [(ngModel)]="Title"
+      [(ngModel)]="title"
+      (input)="Search()" -->
+  <div class="card-body">
+    <div class="row">
+      <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="البحث عن منتجات...." aria-label="Search"
+          aria-describedby="search-addon" />
+        <div class="btn">
+          <button type="button" class="btn btn-danger">بحث</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="name2">
+    <p class="title">فلتر علي حسب السعر</p>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="custom-slider">
+        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+      </div>
+      <div class="fliter">
+        <button type="button" style="width: 100px" class="btn btn-danger btn">
+          تصفية
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="name">
+    <p class="title">اقسام الكتب</p>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <ul class="books-department">
+        <li class="department"><a href="#">عروض خاصة</a></li>
+        <li class="department"><a href="#">جامعة الملك خالد</a></li>
+        <li class="department"><a href="#">الدبلومات</a></li>
+        <li class="department"><a href="#">الدراسات العليا</a></li>
+        <li class="department"><a href="#">اصدارتنا</a></li>
+        <li class="department"><a href="#">الاتصال والاعلام</a></li>
+        <li class="department"><a href="#">الحقوق والعلوم</a></li>
+        <li class="department"><a href="#">السياسة</a></li>
+        <li class="department"><a href="#">العلوم</a></li>
+        <li class="department"><a href="#">التربية</a></li>
+        <li class="department"><a href="#">السنه التحضيرية</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -9,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  // title ="";
+  // Title ="";
+  rating = 0;
+  starCount = 5;
 
-  constructor(private apiService: ApiService) { }
+  ratingArr: boolean[] = [];
+  constructor(private apiService: ApiService ) {
 
+  }
   users: any;
-  books: any;
+ books: any;
   responseGet: Boolean = false
 
   ngOnInit(): void {
@@ -30,8 +36,35 @@ export class HomeComponent implements OnInit {
       .subscribe(res => {
         console.log(res)
         this.books = res;
-        this.responseGet = true
+        this.responseGet = true;
+        this.ratingArr = Array(this.starCount).fill(false);
+
       })
   }
+  // Search() {
+  //   console.log(this.title)
+  //   if (this.title != "") {
+  //     this.books = this.books.filter((res: { title: string; }) => {
+  //       return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
+  //     });
+  //   }
+  //   else if (this.title == "") {
+  //     this.ngOnInit();
+  //   }
+  // }
+  returnStar(i: number) {
+    if (this.rating >= i + 1) {
+      return 'star';
+    } else {
+      return 'star_border';
+    }
+  }
+//   stars(book: { rate: number; }){
+// this.rating=book.rate;
+//   }
+getCarruntRate(num:number){
+
+  return this.rating=num;
+}
 
 }
