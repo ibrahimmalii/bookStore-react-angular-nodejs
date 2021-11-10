@@ -22,11 +22,10 @@
   margin-bottom: 30px;
 }
 
-.container {
-  margin: 10px;
+/* .container {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 h3 {
   /* font-size: 1.75rem; */
@@ -41,10 +40,7 @@ h5 {
   padding: 0px;
 }
 
-.rateing {
-  margin: -34px;
-  padding: 11px;
-}
+
 
 #addCart {
   margin-top: 19px;

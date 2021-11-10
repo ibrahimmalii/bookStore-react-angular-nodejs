@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { RouterModule } from '@angular/router';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 
 
@@ -17,7 +18,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule, NgxSliderModule
   ],
   exports :[
     HeaderComponent, FooterComponent, SidebarComponent, BookDetailsComponent
