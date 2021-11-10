@@ -72,7 +72,6 @@ getCarruntRate(num:number){
   return this.rating=num;
 }
 
-<<<<<<< HEAD
 
 //*************** Start Of Pagination Function****************/
 
@@ -82,12 +81,10 @@ getCarruntRate(num:number){
     this.pageOfItems = pageOfItems;
   }
 
-=======
 addToCart(book:any){
   this._cart.toCart(book);
 }
 goToDetails(id:any){
   this.router.navigateByUrl(`/categories/book-details/${id}`)
 }
->>>>>>> b6d0fa1f1c8d6ad2a7a0d6b19ebaa6541d211cac
 }

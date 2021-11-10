@@ -26,22 +26,11 @@
 .border-line {
   border: 1px solid #000;
 }
-<<<<<<< HEAD
 
-.comment {
-  border-radius: 15px;
-  width: 100%;
-  background-color: #e6e6e6;
-}
-
-/* *{
-  direction:rtl;
-} */
-=======
-a{
+a {
   cursor: pointer;
 }
->>>>>>> b6d0fa1f1c8d6ad2a7a0d6b19ebaa6541d211cac
+
 /*
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
