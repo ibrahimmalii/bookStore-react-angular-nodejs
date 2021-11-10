@@ -6,6 +6,7 @@ import { AppliedStudiessTestsComponent } from './applied-studiess-tests/applied-
 import { ProfessionalDiplomasComponent } from './professional-diplomas/professional-diplomas.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import {MatIconModule} from '@angular/material/icon';
 
 const routes: Routes = [
   {path : 'applied-studiess', component : AppliedStudiessTestsComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
     ProfessionalDiplomasComponent
   ],
   imports: [
-    CommonModule,SharedModule, RouterModule.forChild(routes)
+    CommonModule,SharedModule, RouterModule.forChild(routes),MatIconModule,
   ]
 })
 export class DiplomasModule { }

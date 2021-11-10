@@ -6,11 +6,12 @@ import { ArtsAndHumanitiesComponent } from './arts-and-humanities/arts-and-human
 import { EconomicsAndManagementComponent } from './economics-and-management/economics-and-management.component';
 import { SciencesComponent } from './sciences/sciences.component';
 import { RouterModule, Routes } from '@angular/router';
+import {MatIconModule} from '@angular/material/icon';
 
 const routes: Routes = [
   {path : 'arts-humanities', component : ArtsAndHumanitiesComponent},
   {path : 'economics-management', component : EconomicsAndManagementComponent},
-  {path : 'sciencial', component : SciencesComponent},
+  {path : 'special-education', component : SpecialEducationComponent},
   {path : '', component : ArtsAndHumanitiesComponent}
 ];
 
@@ -23,7 +24,7 @@ const routes: Routes = [
     SciencesComponent
   ],
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild(routes)
+    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,
   ]
 })
 export class GraduateStudiesModule { }

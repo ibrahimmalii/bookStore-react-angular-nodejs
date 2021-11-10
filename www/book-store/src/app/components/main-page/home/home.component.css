@@ -49,3 +49,24 @@ h5 {
 *{
     direction: rtl;
 }
+.carousel-item>img {
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.carousel-indicators>li {
+  padding: 5px;
+}
+
+.carousel-indicators>li.active {
+  background-color: #7D78B1;
+}
+
+.commented {
+  background-color: #7D78B1;
+  color: #fff;
+}
