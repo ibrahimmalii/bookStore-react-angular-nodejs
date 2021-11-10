@@ -38,38 +38,45 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // About AOuth
-    this.authService.authState.subscribe(user => {
-      this.loggedIn = (user != null);
-      this.user = user;
+    console.log('logged stauts', this.userService.isLogged())
+    if(this.userService.isLogged()){
+      this.userService.logout();
+    }
 
-      //check email
-      this.userService.oAuthSignup(this.user).subscribe(response => {
-        this.responseChecked = response;
-        console.log(response)
-        if (this.responseChecked.token) {
-          localStorage.token = this.responseChecked.token;
-          localStorage.user = JSON.stringify(this.responseChecked.user);
-          this.userService.setLoggedStatus(true);
-          this.router.navigateByUrl('/');
-          this.isLoginSuccess = true;
-          this.isLoginError = false;
-        } else {
+      // About OAuth
+      this.authService.authState.subscribe(user => {
+        this.loggedIn = (user != null);
+        this.user = user;
+
+        //check email
+        this.userService.oAuthSignup(this.user).subscribe(response => {
+          this.responseChecked = response;
+          console.log(response)
+          if (this.responseChecked.token) {
+            localStorage.token = this.responseChecked.token;
+            localStorage.user = JSON.stringify(this.responseChecked.user);
+            this.userService.setLoggedStatus(true);
+            this.router.navigateByUrl('/');
+            this.isLoginSuccess = true;
+            this.isLoginError = false;
+          } else {
+            this.isLoginError = true;
+            this.isLoginSuccess = false;
+          }
+
+        }, error => {
           this.isLoginError = true;
           this.isLoginSuccess = false;
-        }
+        })//End Of Check Email
 
-      }, error => {
-        this.isLoginError = true;
-        this.isLoginSuccess = false;
-      })//End Of Check Email
+      });
 
-    });
+
+
 
 
 
     // Check If User Logged Or Not
-    this.userService.isLogged() && this.router.navigateByUrl('/');
 
 
     // Validate Login Form
@@ -83,6 +90,8 @@ export class RegisterComponent implements OnInit {
     });
 
   }
+  //********************* End Of NgOnInit ******************/
+
 
   register() {
     this.isLogged = true;
