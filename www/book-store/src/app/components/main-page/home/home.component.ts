@@ -12,7 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // @Input()title ="";
+  title ="";
   // @Output() search = new EventEmitter <any>();
   // Title ="";
   rating = 0;
@@ -45,18 +45,18 @@ export class HomeComponent implements OnInit {
 
       })
   }
-  // Search() {
-  //   console.log(this.title)
-  //   if (this.title != "") {
-  //     this.books = this.books.filter((res: { title: string; }) => {
-  //       return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
-  //     });
-  //   }
-  //   else if (this.title == "") {
-  //     this.ngOnInit();
-  //   }
-  //   this.search.emit(title);
-  // }
+  Search() {
+    console.log(this.title)
+    if (this.title != "") {
+      this.books = this.books.filter((res: { title: string; }) => {
+        return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
+      });
+    }
+    else if (this.title == "") {
+      this.ngOnInit();
+    }
+
+  }
   returnStar(i: number) {
     if (this.rating >= i + 1) {
       return 'star';
