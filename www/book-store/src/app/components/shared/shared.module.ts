@@ -18,7 +18,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
   ],
   imports: [
     CommonModule,
-    RouterModule, NgxSliderModule
+    RouterModule,
+    NgxSliderModule
   ],
   exports :[
     HeaderComponent, FooterComponent, SidebarComponent, BookDetailsComponent

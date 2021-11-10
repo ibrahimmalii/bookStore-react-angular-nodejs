@@ -1,42 +1,58 @@
-<h2 class="text-center mt-3">BASKET</h2>
-<table class="text-center w-100 container mt-5">
-    <tr class="header">
-        <th>البضائع</th>
-        <th>السعر</th>
-        <th>الكميه</th>
-        <th>الاجمالي</th>
-    </tr>
-    <tr>
-        <!-- <tr *ngFor="let item of list" let currentIndex = index> -->
-        <!-- <td>{{currentIndex + 1}}</td> -->
-        <td class="text-success font-weight-bold" style="font-size: 20px;">{{images}}</td>
-        <td class="text-success font-weight-bold"  style="font-size: 20px;">{{price}}</td>
-        <td class="text-success font-weight-bold" style="font-size: 20px;"><input
-                type="number" step="1" min="0" max="33" (change)='getQuantity(inputQuantity.value)' value="1" #inputQuantity></td>
-        <td class="text-success font-weight-bold" style="font-size: 20px;">{{total}}</td>
-    </tr>
-</table>
-
-
-<div class="card m-auto mt-5 w-50 p-3" style="background-color:var(--mc)">
-    <h3 class="text-light">اجمالي سله المشتريات</h3>
-    <div class="card-body">
-        <table class="w-100 text-light">
-            <tr>
-                <td>المجموع</td>
-                <td>95687</td>
-            </tr>
-            <tr>
-                <td>الشحن</td>
-                <td>20$</td>
-            </tr>
-            <tr>
-                <td>الأجمالي</td>
-                <td>95687</td>
-            </tr>
-        </table>
+<main class="page">
+  <section class="shopping-cart dark">
+    <div class="container">
+      <div class="block-heading">
+        <h1>عربة الشراء</h1>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="items">
+              <div class="product">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img class="img-fluid mx-auto d-block image" src="assets\images\2.jpg" alt="product image">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="info">
+                      <div class="row">
+                        <div class="col-md-5 product-name">
+                          <div class="product-name">
+                            <a href="#">اسم الكتاب</a>
+                            <div class="product-info">
+                              <div>المؤلف: <span class="value">اسم المؤلف</span></div>
+                              <div>عدد الصفحات: <span class="value">عدد الصفحات</span></div>
+                              <div>القسم: <span class="value">اسم القسم</span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 quantity">
+                          <label for="quantity">الكمية:</label>
+                          <input id="quantity" type="number" value="1" class="form-control quantity-input">
+                        </div>
+                        <div class="col-md-3 price">
+                          <span>120جنيه</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <div class="summary">
+              <h3>الملخص</h3>
+              <div class="summary-item"><span class="text">الإجمالي الفرعي</span><span class="price">360جنيه</span>
+              </div>
+              <div class="summary-item"><span class="text">خصومات</span><span class="price">0جنيه</span></div>
+              <div class="summary-item"><span class="text">تكاليف الشحن</span><span class="price">0جنيه</span></div>
+              <div class="summary-item"><span class="text">الإجمالي</span><span class="price">360جنيه</span></div>
+              <button type="button" class="btn btn-primary btn-lg btn-block">تابع عملية الشراء</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card-footer text-center">
-        <a routerLink="/sells/information" class="btn btn-success w-50">التقدم لأتمام الطلب</a>
-    </div>
-</div>
+  </section>
+</main>
