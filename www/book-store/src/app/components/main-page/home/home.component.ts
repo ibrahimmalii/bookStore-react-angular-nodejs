@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
   users: any;
  books: any;
   responseGet: Boolean = false
+  items: any;
+  pageOfItems: Array<any> = [];
+  isPageLoaded: boolean = false;
+  bookUpdated:boolean = false;
 
   ngOnInit(): void {
     // this.http.get('http://localhost:8080/api/users').subscribe(res=>{
@@ -34,11 +38,10 @@ export class HomeComponent implements OnInit {
     this.apiService.get('http://localhost:8080/api/books',
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
-        console.log(res)
         this.books = res;
+        this.items = Array(3).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}` }));
         this.responseGet = true;
         this.ratingArr = Array(this.starCount).fill(false);
-
       })
   }
   // Search() {
@@ -66,5 +69,14 @@ getCarruntRate(num:number){
 
   return this.rating=num;
 }
+
+
+//*************** Start Of Pagination Function****************/
+
+
+
+  onChangePage(pageOfItems: Array<any>) {
+    this.pageOfItems = pageOfItems;
+  }
 
 }
