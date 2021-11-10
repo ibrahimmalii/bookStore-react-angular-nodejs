@@ -13,13 +13,21 @@ export class CartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  products : any;
+  productAmount:number = 1;
 
+  ngOnInit(): void {
+    this.products = localStorage.localCart
+    if(this.products){
+      this.products = JSON.parse(this.products)
+    }
   }
 
   getQuantity(title: any){
     this.total = title * this.price
     console.log(this.total)
   }
+
+
 
 }
