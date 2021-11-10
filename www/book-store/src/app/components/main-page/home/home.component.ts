@@ -12,23 +12,23 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title ="";
+  title = "";
   // @Output() search = new EventEmitter <any>();
   // Title ="";
   rating = 0;
   starCount = 5;
 
   ratingArr: boolean[] = [];
-  constructor( private router: Router, private apiService: ApiService,private _cart: CartService) {
+  constructor(private router: Router, private apiService: ApiService, private _cart: CartService) {
 
   }
   users: any;
- books: any;
+  books: any;
   responseGet: Boolean = false
   items: any;
   pageOfItems: Array<any> = [];
   isPageLoaded: boolean = false;
-  bookUpdated:boolean = false;
+  bookUpdated: boolean = false;
 
   ngOnInit(): void {
     // this.http.get('http://localhost:8080/api/users').subscribe(res=>{
@@ -67,16 +67,16 @@ export class HomeComponent implements OnInit {
       return 'star_border';
     }
   }
-//   stars(book: { rate: number; }){
-// this.rating=book.rate;
-//   }
-getCarruntRate(num:number){
+  //   stars(book: { rate: number; }){
+  // this.rating=book.rate;
+  //   }
+  getCarruntRate(num: number) {
 
-  return this.rating=num;
-}
+    return this.rating = num;
+  }
 
 
-//*************** Start Of Pagination Function****************/
+  //*************** Start Of Pagination Function****************/
 
 
 
@@ -84,10 +84,12 @@ getCarruntRate(num:number){
     this.pageOfItems = pageOfItems;
   }
 
-addToCart(book:any){
-  this._cart.toCart(book);
-}
-goToDetails(id:any){
-  this.router.navigateByUrl(`/categories/book-details/${id}`)
-}
+  addToCart(book: any) {
+    this._cart.toCart(book);
+  }
+  goToDetails(id: any) {
+    this.router.navigateByUrl(`/categories/book-details/${id}`)
+  }
+
+
 }
