@@ -1,15 +1,14 @@
 /* Global */
-* {
+p {
   font-family: "Mirza", cursive;
   /* font-size: 18px; */
   direction: rtl;
 }
 
 /* ----------------------------- */
-.card {
+/* .card {
   width: 307px;
-  margin: 0 0 1.5em;
-}
+} */
 
 .title {
   text-align: start;

@@ -1,6 +1,8 @@
 import { ApiService } from './../../../services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 
 
@@ -17,7 +19,7 @@ export class HomeComponent implements OnInit {
   starCount = 5;
 
   ratingArr: boolean[] = [];
-  constructor(private apiService: ApiService ) {
+  constructor( private router: Router, private apiService: ApiService,private _cart: CartService) {
 
   }
   users: any;
@@ -70,4 +72,10 @@ getCarruntRate(num:number){
   return this.rating=num;
 }
 
+addToCart(book:any){
+  this._cart.toCart(book);
+}
+goToDetails(id:any){
+  this.router.navigateByUrl(`/categories/book-details/${id}`)
+}
 }

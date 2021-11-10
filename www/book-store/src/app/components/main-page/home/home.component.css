@@ -22,11 +22,10 @@
   margin-bottom: 30px;
 }
 
-.container {
-  margin: 10px;
+/* .container {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 h3 {
   /* font-size: 1.75rem; */
@@ -41,10 +40,7 @@ h5 {
   padding: 0px;
 }
 
-.rateing {
-  margin: -34px;
-  padding: 11px;
-}
+
 
 #addCart {
   margin-top: 19px;
@@ -52,4 +48,25 @@ h5 {
 
 *{
     direction: rtl;
+}
+.carousel-item>img {
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.carousel-indicators>li {
+  padding: 5px;
+}
+
+.carousel-indicators>li.active {
+  background-color: #7D78B1;
+}
+
+.commented {
+  background-color: #7D78B1;
+  color: #fff;
 }
