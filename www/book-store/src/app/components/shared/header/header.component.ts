@@ -9,11 +9,24 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private userService: UserService) { }
+  constructor(private apiService: ApiService, private userService: UserService) {
+    this.userService.cartSubject.subscribe((data)=>{
+    this.cartItem =data;
+    });
+   }
+
 
   books: any;
   responseGet: Boolean = false
   ngOnInit(): void {
+    this.cartItemFun();
+  }
+  cartItem:number=0;
+  cartItemFun(){
+    if(localStorage.getItem("localCart")!=null){
+      var cartCount = JSON.parse(localStorage.getItem('localCart')!);
+     this.cartItem =cartCount.length;
+    }
   }
 
   getCatBooks(id:string){

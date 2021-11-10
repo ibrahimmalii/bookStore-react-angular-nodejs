@@ -36,14 +36,20 @@ p {
   margin-bottom: -15px;
 }
 
-.books-department .department a {
+/* .books-department .department a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+} */
+.links {
   display: block;
   padding: 8px;
   text-decoration: none;
   color: black;
 }
 
-.books-department .department a:hover {
+.books-department .links:hover {
   color: #b91d23;
 }
 

@@ -1,8 +1,9 @@
 import { ApiService } from './../../../services/api.service';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
+
 
 
 @Component({
@@ -11,7 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // title ="";
+  title ="";
+  // @Output() search = new EventEmitter <any>();
   // Title ="";
   rating = 0;
   starCount = 5;
@@ -46,17 +48,18 @@ export class HomeComponent implements OnInit {
         this.ratingArr = Array(this.starCount).fill(false);
       })
   }
-  // Search() {
-  //   console.log(this.title)
-  //   if (this.title != "") {
-  //     this.books = this.books.filter((res: { title: string; }) => {
-  //       return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
-  //     });
-  //   }
-  //   else if (this.title == "") {
-  //     this.ngOnInit();
-  //   }
-  // }
+  Search() {
+    console.log(this.title)
+    if (this.title != "") {
+      this.books = this.books.filter((res: { title: string; }) => {
+        return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
+      });
+    }
+    else if (this.title == "") {
+      this.ngOnInit();
+    }
+
+  }
   returnStar(i: number) {
     if (this.rating >= i + 1) {
       return 'star';

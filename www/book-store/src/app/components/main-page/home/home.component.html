@@ -31,6 +31,16 @@
 
 
 <div class="container mt-5">
+<input
+  type="search"
+  [(ngModel)]="title"
+  (input)="Search()"
+  class="form-control rounded"
+  placeholder="البحث عن منتجات...."
+  aria-label="Search"
+  aria-describedby="search-addon"
+/>
+<div class="container">
   <div class="row" *ngIf="responseGet">
     <div class="col-12 col-lg-4">
       <app-sidebar></app-sidebar>
@@ -66,15 +76,26 @@
                   {{ getCarruntRate(book.rate) }}
                 </p>
 
-                <button mat-icon-button class="btn btn-sm text-warning m-0" *ngFor="let r of ratingArr; index as i">
+                <button
+                  mat-icon-button
+                  class="btn text-warning"
+                  *ngFor="let r of ratingArr; index as i"
+                >
                   <mat-icon>
                     {{ returnStar(i) }}
                   </mat-icon>
                 </button>
               </div>
 
-              <a href="#" class="btn btn-danger" id="addCart" (click)="addToCart(book)">الاضافة الي العربة</a>
-
+              <button
+                type="button"
+                id="addCart"
+                class="btn btn-danger btn"
+                (click)="addToCart(book)"
+              >
+                الاضافة الي العربة
+              </button>
+              >
             </div>
           </div>
         </div>
