@@ -63,3 +63,15 @@ i{
 .fa-google{
   margin-left: 38px;
 }
+
+.create{
+  background-color: var(--mc);
+}
+
+small{
+  background-color: #70ff70;
+}
+
+*{
+  direction:ltr
+}
