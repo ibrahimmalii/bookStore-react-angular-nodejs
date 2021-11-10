@@ -7,7 +7,10 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { RightsComponent } from './rights/rights.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
-
+import { MatFormFieldModule } from '@angular/material/form-field';     //accordion and accordion tab
+import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 const routes: Routes = [
   {path : 'engineering', component : EngineeringComponent},
   {path : 'home-economics', component : HomeEconomicsComponent},
@@ -26,7 +29,7 @@ const routes: Routes = [
     RightsComponent
   ],
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild(routes)
+    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,MatInputModule
   ]
 })
 export class AcademicCoursesModule { }
