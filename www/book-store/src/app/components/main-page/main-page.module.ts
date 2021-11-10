@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import {MatIconModule} from '@angular/material/icon';
 // import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 // import {NgPipesModule} from 'ngx-pipes';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
     HomeComponent,
   ],
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,
+    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,FormsModule
   ]
 })
 export class MainPageModule { }

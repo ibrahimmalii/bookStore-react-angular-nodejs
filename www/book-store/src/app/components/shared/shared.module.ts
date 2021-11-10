@@ -6,6 +6,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { RouterModule } from '@angular/router';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
   imports: [
     CommonModule,
     RouterModule,
-    NgxSliderModule
+    NgxSliderModule,FormsModule
   ],
   exports :[
     HeaderComponent, FooterComponent, SidebarComponent, BookDetailsComponent

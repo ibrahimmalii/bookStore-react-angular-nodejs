@@ -1,4 +1,13 @@
 <app-header></app-header>
+<!-- <input
+  type="search"
+  [(ngModel)]="title"
+  (input)="Search()"
+  class="form-control rounded"
+  placeholder="البحث عن منتجات...."
+  aria-label="Search"
+  aria-describedby="search-addon"
+/> -->
 <div class="container">
   <div class="row" *ngIf="responseGet">
     <div class="col col-md-11 col-lg-4">
@@ -7,7 +16,11 @@
 
     <div class="col">
       <div class="row g-3">
-        <div class="col col-md-1 col-lg-4" *ngFor="let book of books" style="width: 16rem">
+        <div
+          class="col col-md-1 col-lg-4"
+          *ngFor="let book of books"
+          style="width: 16rem"
+        >
           <div class="card text-center">
             <img src="http://localhost:8080/api/books/{{ book._id }}/avatar" />
             <div class="card-body">
@@ -33,14 +46,20 @@
                   {{ getCarruntRate(book.rate) }}
                 </p>
 
-                <button mat-icon-button class="btn text-warning" *ngFor="let r of ratingArr; index as i">
+                <button
+                  mat-icon-button
+                  class="btn text-warning"
+                  *ngFor="let r of ratingArr; index as i"
+                >
                   <mat-icon>
                     {{ returnStar(i) }}
                   </mat-icon>
                 </button>
               </div>
 
-              <a href="#" class="btn btn-danger" id="addCart">الاضافة الي العربة</a>
+              <a href="#" class="btn btn-danger" id="addCart"
+                >الاضافة الي العربة</a
+              >
             </div>
           </div>
         </div>

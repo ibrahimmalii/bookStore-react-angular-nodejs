@@ -1,6 +1,7 @@
 import { ApiService } from './../../../services/api.service';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 
 @Component({
@@ -9,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // title ="";
+  // @Input()title ="";
+  // @Output() search = new EventEmitter <any>();
   // Title ="";
   rating = 0;
   starCount = 5;
@@ -51,6 +53,7 @@ export class HomeComponent implements OnInit {
   //   else if (this.title == "") {
   //     this.ngOnInit();
   //   }
+  //   this.search.emit(title);
   // }
   returnStar(i: number) {
     if (this.rating >= i + 1) {
