@@ -14,6 +14,14 @@ export class HeaderComponent implements OnInit {
   books: any;
   responseGet: Boolean = false
   ngOnInit(): void {
+    this.cartItemFun();
+  }
+  cartItem:number=0;
+  cartItemFun(){
+    if(localStorage.getItem("localCart")!=null){
+      var cartCount = JSON.parse(localStorage.getItem('localCart')!);
+     this.cartItem =cartCount.length;
+    }
   }
 
   getCatBooks(id:string){
