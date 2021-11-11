@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container-fluid">
+<div class="container">
 
 
   <div class="row">
@@ -40,59 +40,63 @@
 
 
 <div class="container mt-5">
-  <div class="row" *ngIf="responseGet">
-    <div class="col-12 col-lg-4">
-      <app-sidebar></app-sidebar>
-    </div>
+  <input type="search" [(ngModel)]="title" (input)="Search()" class="form-control rounded"
+    placeholder="البحث عن منتجات...." aria-label="Search" aria-describedby="search-addon" />
+  <div class="container">
+    <div class="row" *ngIf="responseGet">
+      <div class="col-12 col-lg-4">
+        <app-sidebar></app-sidebar>
+      </div>
 
-    <div class="col">
-      <div class="row g-3">
-        <div class="col-12 col-lg-4" *ngFor="let book of pageOfItems">
-          <div class="card text-center">
-            <a>
-              <img src="http://localhost:8080/api/books/{{ book._id }}/avatar" (click)="goToDetails(book._id)" />
-            </a>
-            <div class="card-body">
-              <h3>المؤلف : {{ book.author }}</h3>
-              <h5 class="card-title">
-                <!-- maxLength: 22:"....." -->
-                {{ book.title }}
-              </h5>
-              <span class="badge fs-5 rounded-pill bg-primary" id="price">
-                {{ book.price }} جنيه
-              </span>
+      <div class="col">
+        <div class="row g-3">
+          <div class="col-12 col-lg-4" *ngFor="let book of pageOfItems">
+            <div class="card text-center">
+              <a>
+                <img src="http://localhost:8080/api/books/{{ book._id }}/avatar" (click)="goToDetails(book._id)" />
+              </a>
+              <div class="card-body">
+                <h3>المؤلف : {{ book.author }}</h3>
+                <h5 class="card-title">
+                  <!-- maxLength: 22:"....." -->
+                  {{ book.title }}
+                </h5>
+                <span class="badge fs-5 rounded-pill bg-primary" id="price">
+                  {{ book.price }} جنيه
+                </span>
 
-              <!-- <div class="price">
+                <!-- <div class="price">
                   <h5>{{ book.price }}</h5>
                 </div> -->
-              <!-- (input)="stars(book)" -->
+                <!-- (input)="stars(book)" -->
 
-              <div class="rateing">
-                <!-- <div class="hidden">
+                <div class="rateing">
+                  <!-- <div class="hidden">
                     {{ getCarruntRate(book.rate) }}
                   </div> -->
-                <p hidden>
-                  {{ getCarruntRate(book.rate) }}
-                </p>
+                  <p hidden>
+                    {{ getCarruntRate(book.rate) }}
+                  </p>
 
-                <button mat-icon-button class="btn btn-sm text-warning m-0" *ngFor="let r of ratingArr; index as i">
-                  <mat-icon>
-                    {{ returnStar(i) }}
-                  </mat-icon>
+                  <button mat-icon-button class="btn text-warning" *ngFor="let r of ratingArr; index as i">
+                    <mat-icon>
+                      {{ returnStar(i) }}
+                    </mat-icon>
+                  </button>
+                </div>
+
+                <button type="button" id="addCart" class="btn btn-danger btn" (click)="addToCart(book)">
+                  الاضافة الي العربة
                 </button>
               </div>
-
-              <a href="#" class="btn btn-danger" id="addCart" (click)="addToCart(book)">الاضافة الي العربة</a>
-
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-footer pb-0 pt-3">
-        <jw-pagination [items]="books" (changePage)="onChangePage($event)"></jw-pagination>
+        <div class="card-footer pb-0 pt-3">
+          <jw-pagination [items]="books" (changePage)="onChangePage($event)"></jw-pagination>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<app-footer></app-footer>
+  <app-footer></app-footer>

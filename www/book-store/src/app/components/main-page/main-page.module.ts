@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 // import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 // import {NgPipesModule} from 'ngx-pipes';
 import { JwPaginationModule } from 'jw-angular-pagination';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
     HomeComponent,
   ],
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,JwPaginationModule
+    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,JwPaginationModule,FormsModule
   ]
 })
 export class MainPageModule { }

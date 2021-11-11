@@ -1,8 +1,9 @@
 import { ApiService } from './../../../services/api.service';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
+
 
 
 @Component({
@@ -11,22 +12,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // title ="";
+  title = "";
+  // @Output() search = new EventEmitter <any>();
   // Title ="";
   rating = 0;
   starCount = 5;
 
   ratingArr: boolean[] = [];
-  constructor( private router: Router, private apiService: ApiService,private _cart: CartService) {
+  constructor(private router: Router, private apiService: ApiService, private _cart: CartService) {
 
   }
   users: any;
- books: any;
+  books: any;
   responseGet: Boolean = false
   items: any;
   pageOfItems: Array<any> = [];
   isPageLoaded: boolean = false;
-  bookUpdated:boolean = false;
+  bookUpdated: boolean = false;
 
   ngOnInit(): void {
     // this.http.get('http://localhost:8080/api/users').subscribe(res=>{
@@ -46,17 +48,18 @@ export class HomeComponent implements OnInit {
         this.ratingArr = Array(this.starCount).fill(false);
       })
   }
-  // Search() {
-  //   console.log(this.title)
-  //   if (this.title != "") {
-  //     this.books = this.books.filter((res: { title: string; }) => {
-  //       return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
-  //     });
-  //   }
-  //   else if (this.title == "") {
-  //     this.ngOnInit();
-  //   }
-  // }
+  Search() {
+    console.log(this.title)
+    if (this.title != "") {
+      this.books = this.books.filter((res: { title: string; }) => {
+        return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
+      });
+    }
+    else if (this.title == "") {
+      this.ngOnInit();
+    }
+
+  }
   returnStar(i: number) {
     if (this.rating >= i + 1) {
       return 'star';
@@ -64,16 +67,16 @@ export class HomeComponent implements OnInit {
       return 'star_border';
     }
   }
-//   stars(book: { rate: number; }){
-// this.rating=book.rate;
-//   }
-getCarruntRate(num:number){
+  //   stars(book: { rate: number; }){
+  // this.rating=book.rate;
+  //   }
+  getCarruntRate(num: number) {
 
-  return this.rating=num;
-}
+    return this.rating = num;
+  }
 
 
-//*************** Start Of Pagination Function****************/
+  //*************** Start Of Pagination Function****************/
 
 
 
