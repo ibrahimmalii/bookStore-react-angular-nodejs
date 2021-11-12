@@ -1,67 +1,77 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap');
-p{
+
+p {
   font-family: 'Noto Naskh Arabic', serif;
 }
+
 .badge {
   min-width: 130px;
   height: 50px;
   padding-top: 10px;
 }
+
 .custom-button {
-  background-color:rgb(189, 159, 83);
+  background-color: rgb(189, 159, 83);
   color: rgb(250, 239, 239);
   transition: all .5s ease-in;
 }
+
 .custom-button i {
   transition: all .5s ease-in;
 }
+
 .custom-button:hover {
   background-color: transparent;
-  border-color:rgb(189, 159, 83);
+  border-color: rgb(189, 159, 83);
 
   color: rgb(189, 159, 83);
 }
+
 .media img {
   width: 50px;
   border-radius: 50%;
 }
-.main{
-  background-color:rgb(78, 68, 100)
+
+.main {
+  background-color: #E1D6B6;
 }
-.background-img{
+
+.background-img {
   background-image: url("/assets/images/background.jpg");
   opacity: .8;
   height: 60vh;
   margin-top: 0px;
   /* Center and scale the image nicely */
-   background-attachment: fixed;
+  background-attachment: fixed;
   background-position: center;
 
   background-repeat: no-repeat;
-  background-size:cover
+  background-size: cover
 }
 
 
-.card{
-  opacity:0.8;
-  background-color:rgba(1, 1, 5, 0.4);
+.card {
+  opacity: 0.8;
+  background-color: #BEB49D;
+  font-weight: bold;
   transition: box-shadow 0.3s;
 
 }
-.sec2{
-  background-color:rgba(252, 252, 252, 0.712);
+
+.sec2 {
+  background-color: rgba(252, 252, 252, 0.712);
   color: rgb(16, 61, 59);
 
 
 }
-.carousel-item > img {
-  height: 500px;
-   background-attachment: fixed;
-   background-position: center;
 
-   background-repeat: no-repeat;
-   background-size:cover
+.carousel-item>img {
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
 .carousel-indicators>li {
@@ -69,22 +79,30 @@ p{
 }
 
 .carousel-indicators>li.active {
-  background-color:#7D78B1;
+  background-color: #7D78B1;
 }
-.commented{
-  background-color:#7D78B1;
-  color:#fff;
+
+.commented {
+  background-color: #bbb9b6;
+  font-size: 18px;
+  color: #fff;
 }
+
 .card:hover {
   box-shadow: 10px 20px 20px 10px rgba(15, 66, 78, 0.452);
 }
-.card-img{
+
+.card-img {
 
   border-radius: 15px;
   justify-content: stretch;
   transition: card-shadow 0.3s;
 }
-.card-img:hover{
-    box-shadow: 10px 10px 10px 10px rgba(58, 67, 70, 0.452);
 
+.card-img:hover {
+  box-shadow: 10px 10px 10px 10px rgba(58, 67, 70, 0.452);
+}
+
+.description{
+  line-height: 37px;
 }
