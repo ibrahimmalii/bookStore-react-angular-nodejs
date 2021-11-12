@@ -12,7 +12,7 @@ export class UserService {
   registerUrl = 'http://localhost:8080/api/auth/register';
   OAuthUrl = 'http://localhost:8080/api/auth/oauthsignup';
 
-  loggedStatus =new BehaviorSubject<boolean>(false);
+  loggedStatus =new Subject<boolean>();
   constructor(private apiService : ApiService) {
     this.setLoggedStatus(this.isLogged());
   }
@@ -38,8 +38,8 @@ export class UserService {
   }
 
   logout(){
-    localStorage.clear();
     this.setLoggedStatus(false);
+    localStorage.clear();
   }
 
   isAdmin(){

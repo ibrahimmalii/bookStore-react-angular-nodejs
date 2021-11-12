@@ -1,58 +1,53 @@
-<main class="page">
-  <section class="shopping-cart dark">
-    <div class="container">
-      <div class="block-heading">
-        <h1>عربة الشراء</h1>
-      </div>
-      <div class="content">
+<div class="card">
+  <div class="row">
+    <div class="col-md-8 cart">
+      <div class="title">
         <div class="row">
-          <div class="col-md-12 col-lg-8">
-            <div class="items">
-              <div class="product">
-                <div class="row">
-                  <div class="col-md-3">
-                    <img class="img-fluid mx-auto d-block image" src="assets\images\2.jpg" alt="product image">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="info">
-                      <div class="row">
-                        <div class="col-md-5 product-name">
-                          <div class="product-name">
-                            <a href="#">اسم الكتاب</a>
-                            <div class="product-info">
-                              <div>المؤلف: <span class="value">اسم المؤلف</span></div>
-                              <div>عدد الصفحات: <span class="value">عدد الصفحات</span></div>
-                              <div>القسم: <span class="value">اسم القسم</span></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-4 quantity">
-                          <label for="quantity">الكمية:</label>
-                          <input id="quantity" type="number" value="1" class="form-control quantity-input">
-                        </div>
-                        <div class="col-md-3 price">
-                          <span>120جنيه</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg-4">
-            <div class="summary">
-              <h3>الملخص</h3>
-              <div class="summary-item"><span class="text">الإجمالي الفرعي</span><span class="price">360جنيه</span>
-              </div>
-              <div class="summary-item"><span class="text">خصومات</span><span class="price">0جنيه</span></div>
-              <div class="summary-item"><span class="text">تكاليف الشحن</span><span class="price">0جنيه</span></div>
-              <div class="summary-item"><span class="text">الإجمالي</span><span class="price">360جنيه</span></div>
-              <button type="button" class="btn btn-primary btn-lg btn-block">تابع عملية الشراء</button>
-            </div>
+          <div class="col">
+            <h4><b>عربة التسوق</b></h4>
           </div>
         </div>
       </div>
+      <div class="row border-top border-bottom" *ngFor="let product of products">
+        <div class="row main align-items-center">
+          <div class="col-2"><img class="img-fluid" src="/assets/images/1.jpg"></div>
+          <div class="col">
+            <div class="row text-muted">{{product.title}}</div>
+            <!-- <div class="row">{{product.description | shorten: 10: '.....'}}</div> -->
+          </div>
+          <div class="col">
+            <button class="btn"><span class="badge bg-primary">-</span></button>
+            <label>{{productAmount}}</label>
+            <button class="btn"><span class="badge bg-primary">+</span></button>
+          </div>
+          <div class="col">{{product.price}} جنيه</div>
+        </div>
+      </div>
+
+      <div class="back-to-shop"><button type="button" routerLink="/" class="btn btn-primary position-relative">عودة الي
+          التسوق</button>
+      </div>
     </div>
-  </section>
-</main>
+    <div class="col-md-4 summary">
+      <div>
+        <h5><b>الملخص</b></h5>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col" style="padding-left:0;">الاجمالي الفرعي</div>
+        <div class="col text-right">132 جنيه</div>
+      </div>
+      <form>
+        <p>نوع الشحن</p> <select>
+          <option class="text-muted">شحن عادي-10 جنيه</option>
+          <option class="text-muted">شحن سريع-50 جنيه</option>
+        </select>
+        <p>كود الخصم</p> <input id="code" placeholder="ادخل كود الخصم">
+      </form>
+      <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+        <div class="col">الاجمالي</div>
+        <div class="col text-right">137 جنيه</div>
+      </div> <button class="checkout" routerLink="/sells/information">تابع عملية الشراء</button>
+    </div>
+  </div>
+</div>

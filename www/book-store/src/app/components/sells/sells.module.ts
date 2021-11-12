@@ -6,6 +6,7 @@ import { InformationComponent } from './information/information.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
+import {NgPipesModule} from 'ngx-pipes';
 
 const routes : Routes = [
   {path: 'cart', component: CartComponent},
@@ -25,7 +26,8 @@ const routes : Routes = [
   imports: [
     CommonModule, RouterModule.forChild(routes),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgPipesModule
   ]
 })
 export class SellsModule { }
