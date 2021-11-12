@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top: 0;
 }
 
 .app_conatiner {
@@ -70,7 +71,7 @@ body {
   font-size: 20px;
   /* margin-left: 5px; */
   bottom: 18px;
-  left: -137px;
+  left: -204px;
   position: relative;
 }
 
@@ -152,3 +153,4 @@ body {
   border: none;
   cursor: pointer;
 }
+
