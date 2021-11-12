@@ -84,12 +84,10 @@ export class HomeComponent implements OnInit {
     this.pageOfItems = pageOfItems;
   }
 
-  addToCart(book: any) {
-    this._cart.toCart(book);
-  }
-  goToDetails(id: any) {
-    this.router.navigateByUrl(`/categories/book-details/${id}`)
-  }
-
-
+addToCart(book:any){
+  this._cart.toCart(book);
+}
+goToDetails(id:any){
+  this.router.navigateByUrl(`/categories/book-details/${id}`)
+}
 }
