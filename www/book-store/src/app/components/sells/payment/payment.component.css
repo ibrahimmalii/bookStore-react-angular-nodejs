@@ -6,6 +6,7 @@
 
 .parent {
   background-image: url("/assets/images/pay.jpg");
+  height: 100vh;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top: 0;
 }
 
 .app_conatiner {
@@ -61,13 +63,15 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 50px;
+  padding-left: 48px;
   font-weight: normal;
 }
 
 .middle-box h1 span {
   font-size: 20px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
   bottom: 18px;
+  left: -137px;
   position: relative;
 }
 
