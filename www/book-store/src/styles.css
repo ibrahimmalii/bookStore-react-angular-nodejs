@@ -33,13 +33,8 @@
   background-color: #e6e6e6;
 }
 
-<<<<<<< HEAD
 body {
-  padding-top: 11px
-=======
-body{
-  padding-top:88px
->>>>>>> f599753171c91f601aa0bca1e6af4c799291efd2
+  padding-top: 88px
 }
 
 /* *{
@@ -48,10 +43,7 @@ body{
 a {
   cursor: pointer;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> f599753171c91f601aa0bca1e6af4c799291efd2
 /*
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
