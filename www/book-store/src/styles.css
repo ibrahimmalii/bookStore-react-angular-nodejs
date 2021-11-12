@@ -33,12 +33,13 @@
   background-color: #e6e6e6;
 }
 
+body{
+  padding-top:11px
+}
+
 /* *{
   direction:rtl;
 } */
-a{
-  cursor: pointer;
-}
 a{
   cursor: pointer;
 }
