@@ -68,6 +68,7 @@ export class CartComponent implements OnInit {
         }else if(this.products[i].quantity <= 1 ){
           if(confirm('هل حقا تريد حذ المنتج من حقيبة المشتريات؟')){
             this.products = this.products.filter((item:any) => item._id != this.products[i]._id)
+            this.getTotalPrice(this.products)
             localStorage.localCart = JSON.stringify(this.products)
           }
         }
