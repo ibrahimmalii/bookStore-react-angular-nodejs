@@ -14,9 +14,11 @@ export class PaymentComponent implements OnInit {
 
   stripeResponse: any;
   beforeClick: boolean = false
+  totalPrice :any;
 
   ngOnInit(): void {
     this.loadStripe();
+    this.totalPrice = localStorage.orderPrice
   }
 
 

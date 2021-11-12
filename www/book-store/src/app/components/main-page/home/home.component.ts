@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
     console.log(this.title)
     if (this.title != "") {
       this.books = this.books.filter((res: { title: string; }) => {
-        return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
+        return res.title.toLocaleLowerCase().includes(this.title.toLocaleLowerCase())
       });
     }
     else if (this.title == "") {
@@ -84,12 +84,10 @@ export class HomeComponent implements OnInit {
     this.pageOfItems = pageOfItems;
   }
 
-  addToCart(book: any) {
-    this._cart.toCart(book);
-  }
-  goToDetails(id: any) {
-    this.router.navigateByUrl(`/categories/book-details/${id}`)
-  }
-
-
+addToCart(book:any){
+  this._cart.toCart(book);
+}
+goToDetails(id:any){
+  this.router.navigateByUrl(`/categories/book-details/${id}`)
+}
 }
