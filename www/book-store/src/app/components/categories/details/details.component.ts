@@ -77,6 +77,7 @@ export class DetailsComponent implements OnInit {
         this.ratingArr = Array(this.starCount).fill(false);
 
             this.comments=response.comments;
+            console.log(this.comments);
             this.comments=this.comments.splice(this.comments.length-5,this.comments.length);
           },
           (error:any)=>{
