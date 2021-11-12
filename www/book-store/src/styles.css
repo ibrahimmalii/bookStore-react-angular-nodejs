@@ -27,10 +27,29 @@
   border: 1px solid #000;
 }
 
+<<<<<<< HEAD
 a {
   cursor: pointer;
 }
 
+=======
+.comment {
+  border-radius: 15px;
+  width: 100%;
+  background-color: #e6e6e6;
+}
+
+body{
+  padding-top:11px
+}
+
+/* *{
+  direction:rtl;
+} */
+a{
+  cursor: pointer;
+}
+>>>>>>> ba8349f6321c1a78f380366c2ee20a2558d256cd
 /*
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
