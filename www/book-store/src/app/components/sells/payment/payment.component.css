@@ -51,12 +51,14 @@ body{
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 50px;
+  padding-left: 48px;
   font-weight: normal;
 }
 .middle-box h1 span{
   font-size: 20px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
   bottom: 18px;
+  left: -137px;
   position: relative;
 }
 

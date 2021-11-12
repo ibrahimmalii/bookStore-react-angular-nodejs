@@ -75,4 +75,8 @@ export class CartComponent implements OnInit {
     }
   }
 
+  storeTotalPriceOfOrder(total:any){
+    localStorage.orderPrice = total
+  }
+
 }
