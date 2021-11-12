@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart/cart.component';
@@ -27,7 +28,8 @@ const routes : Routes = [
     CommonModule, RouterModule.forChild(routes),
     ReactiveFormsModule,
     FormsModule,
-    NgPipesModule
+    NgPipesModule,
+    SharedModule
   ]
 })
 export class SellsModule { }
