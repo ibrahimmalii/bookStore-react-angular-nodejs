@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 // import { LabelType, Options } from 'ng5-slider/options';
 // import { LabelType, Options } from 'ng5-slider';
 import { Options } from '@angular-slider/ngx-slider';
@@ -14,11 +14,12 @@ export class SidebarComponent implements OnInit {
   // title ="";
   // @Input title:string ="";
   // @Input() Title = '';
-
+  @Output() searchText=new EventEmitter<string>();
 
   constructor(private apiService: ApiService ) {
 
   }
+
   users: any;
  books: any;
   responseGet: Boolean = false
@@ -41,19 +42,22 @@ export class SidebarComponent implements OnInit {
       })
   }
 
+  search(text:string){
+    this.searchText.emit(text);
+  }
 
 
 
 
-
-  // Search() {
-  //   console.log(this.title)
-  //   if (this.title != "") {
+  // Search(title:any) {
+  //   console.log(title)
+  //   if (title != "") {
   //     this.books = this.books.filter((res: { title: string; }) => {
-  //       return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
+
+  //       return this.books=res.title.toLocaleLowerCase().includes(title.toLocaleLowerCase())
   //     });
   //   }
-  //   else if (this.title == "") {
+  //   else if (title == "") {
   //     this.ngOnInit();
   //   }
   // }

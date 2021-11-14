@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
   // Title ="";
   rating = 0;
   starCount = 5;
-
+  originalBooks:any;
+  searchedText={author:""};
   ratingArr: boolean[] = [];
   constructor(private router: Router, private apiService: ApiService, private _cart: CartService) {
 
@@ -43,23 +44,28 @@ export class HomeComponent implements OnInit {
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
         this.books = res;
+        this.originalBooks=this.books;
         this.items = Array(3).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}` }));
         this.responseGet = true;
         this.ratingArr = Array(this.starCount).fill(false);
       })
   }
-  Search() {
-    console.log(this.title)
-    if (this.title != "") {
-      this.books = this.books.filter((res: { title: string; }) => {
-        return res.title.toLocaleLowerCase().includes(this.title.toLocaleLowerCase())
-      });
-    }
-    else if (this.title == "") {
-      this.ngOnInit();
-    }
 
+  getSearchText(text:any){
+    this.searchedText.author = text
+
+  // Search() {
+  //   console.log(this.title)
+    // if (this.searchedText != "") {
+    //   this.books = this.books.filter(this.search);
+    // }
+    // else if (this.searchedText == "") {
+    //   this.books= this.originalBooks;
+    // }
   }
+
+
+  // }
   returnStar(i: number) {
     if (this.rating >= i + 1) {
       return 'star';
@@ -88,6 +94,7 @@ addToCart(book:any){
   this._cart.toCart(book);
 }
 goToDetails(id:any){
+
   this.router.navigateByUrl(`/categories/book-details/${id}`)
 }
 }

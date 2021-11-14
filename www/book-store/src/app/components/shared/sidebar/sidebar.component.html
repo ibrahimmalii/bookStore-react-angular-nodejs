@@ -8,17 +8,18 @@
     <p class="title">البحث في الكتب</p>
   </div>
   <!-- [(ngModel)]="Title"
-      [(ngModel)]="title"
-      (input)="Search()" -->
-  <div class="card-body">
-    <div class="row">
-      <div class="input-group">
-        <input
-          type="search"
-          class="form-control rounded"
-          placeholder="البحث عن منتجات...."
-          aria-label="Search"
-          aria-describedby="search-addon"
+      [(ngModel)]="title" -->
+      <div class="card-body">
+        <div class="row">
+          <div class="input-group">
+            <input
+            type="search"
+            class="form-control rounded"
+            placeholder="البحث عن منتجات...."
+            aria-label="Search"
+            aria-describedby="search-addon"
+            #text
+             (input)="search(text.value)"
         />
         <div class="btn">
           <button type="button" class="btn btn-danger">بحث</button>
