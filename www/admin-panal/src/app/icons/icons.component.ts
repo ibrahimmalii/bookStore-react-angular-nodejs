@@ -41,4 +41,20 @@ export class IconsComponent implements OnInit {
     }
   }
 
+  deleteItem(id:any){
+    if(confirm('Are you sure?')){
+      this.http.delete(`http://localhost:8080/api/books/delete/${id}`).subscribe(response=>{
+        console.log(response)
+        location.reload()
+      })
+    }
+  }
+
+  addNew(rate:any, title:string, author:string, amount:any, price:any, description:string, avatar:any){
+    this.http.post('http://localhost:8080/api/books', {rate, title, author, amount, price, description, avatar}).subscribe(response=>{
+      console.log(response)
+      location.reload()
+    })
+  }
+
 }
