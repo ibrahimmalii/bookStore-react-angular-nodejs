@@ -28,11 +28,13 @@ export class HomeComponent implements OnInit {
   }
   users: any;
   books: any;
+  newbooks:Array<any> = [];
   responseGet: Boolean = false
   items: any;
   pageOfItems: Array<any> = [];
   isPageLoaded: boolean = false;
   bookUpdated: boolean = false;
+
 
   ngOnInit(): void {
     // this.http.get('http://localhost:8080/api/users').subscribe(res=>{
@@ -58,8 +60,20 @@ export class HomeComponent implements OnInit {
     this.searchedText = text
 }
 getMaxPrice(maxPrice:any){
+  this.books=this.books;
   this.maxPrice = maxPrice
 }
+getbooks(minPrice:any,maxPrice:any){
+  let newbooks:Array<any> = [];
+  for(let i=0;i<this.books.length;i++){
+    if(this.books[i].price >= minPrice&&this.books[i].price <= maxPrice){
+      newbooks.push(this.books[i]);
+    }
+  }
+  console.log(newbooks);
+  return newbooks
+}
+
 getMinPrice(minPrice:any){
   this.minPrice= minPrice;
 }
