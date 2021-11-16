@@ -39,6 +39,8 @@
           [(value)]="minValue"
           [(highValue)]="maxValue"
           [options]="options"
+          (valueChange)="searchByMinPrice()"
+          (highValueChange)="searchByMaxPrice()"
         ></ngx-slider>
       </div>
       <div class="fliter">

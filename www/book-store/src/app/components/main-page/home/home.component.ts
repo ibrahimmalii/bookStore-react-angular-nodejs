@@ -15,10 +15,13 @@ export class HomeComponent implements OnInit {
   title = "";
   // @Output() search = new EventEmitter <any>();
   // Title ="";
+    maxPrice=500;
+    minPrice=0;
+
   rating = 0;
   starCount = 5;
   originalBooks:any;
-  searchedText={author:""};
+  searchedText="";
   ratingArr: boolean[] = [];
   constructor(private router: Router, private apiService: ApiService, private _cart: CartService) {
 
@@ -52,17 +55,14 @@ export class HomeComponent implements OnInit {
   }
 
   getSearchText(text:any){
-    this.searchedText.author = text
-
-  // Search() {
-  //   console.log(this.title)
-    // if (this.searchedText != "") {
-    //   this.books = this.books.filter(this.search);
-    // }
-    // else if (this.searchedText == "") {
-    //   this.books= this.originalBooks;
-    // }
-  }
+    this.searchedText = text
+}
+getMaxPrice(maxPrice:any){
+  this.maxPrice = maxPrice
+}
+getMinPrice(minPrice:any){
+  this.minPrice= minPrice;
+}
 
 
   // }

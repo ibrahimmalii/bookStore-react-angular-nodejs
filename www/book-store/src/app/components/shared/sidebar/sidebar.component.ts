@@ -15,7 +15,8 @@ export class SidebarComponent implements OnInit {
   // @Input title:string ="";
   // @Input() Title = '';
   @Output() searchText=new EventEmitter<string>();
-
+  @Output() maxPrice=new EventEmitter<number>();
+  @Output() minPrice= new EventEmitter<number>();
   constructor(private apiService: ApiService ) {
 
   }
@@ -42,25 +43,16 @@ export class SidebarComponent implements OnInit {
       })
   }
 
+  searchByMinPrice(){
+    this.minPrice.emit(this.minValue);
+  }
+  searchByMaxPrice(){
+    this.maxPrice.emit(this.maxValue);
+  }
   search(text:string){
     this.searchText.emit(text);
   }
 
-
-
-
-  // Search(title:any) {
-  //   console.log(title)
-  //   if (title != "") {
-  //     this.books = this.books.filter((res: { title: string; }) => {
-
-  //       return this.books=res.title.toLocaleLowerCase().includes(title.toLocaleLowerCase())
-  //     });
-  //   }
-  //   else if (title == "") {
-  //     this.ngOnInit();
-  //   }
-  // }
   getCatBooks(id:string){
 
     const token = localStorage.token
@@ -85,27 +77,17 @@ export class SidebarComponent implements OnInit {
     selectionBarGradient: {
       from: '#fcba03',
       to: '#fcba03',
-    },
-    getPointerColor: function(value) {
-      if (value <= 500)
-          return '#b91d23';
-      if (value <= 6)
-          return 'orange';
-      if (value <= 9)
-          return 'yellow';
-      return '#2AE02A';
-  },
-
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          return "  <b>الاقل سعر:</b> " + value+"جنيه";
-        case LabelType.High:
-          return " <b>الاعلي سعر:</b> " + value +"جنيه";
-        default:
-          return "جنيه" + value;
-      }
     }
+    // translate: (value: number, label: LabelType): string => {
+    //   switch (label) {
+    //     case LabelType.Low:
+    //       return "  <b>الاقل سعر:</b> " + value+"جنيه";
+    //     case LabelType.High:
+    //       return " <b>الاعلي سعر:</b> " + value +"جنيه";
+    //     default:
+    //       return "جنيه" + value;
+    //   }
+    // }
   };
 
 
