@@ -70,12 +70,12 @@ router.get('/:id', auth, async (req, res) => {
             return res.status(400).json('No books found')
         }
 
-        let owners = []
-        book.comments.forEach(async(comment)=>{
-            let user = await User.findOne({_id: comment.ownerId},{avatar: 0})
-            comment.ownerId = {email: user.email, name: user.name}
-            console.log(comment)
-        })
+        // let owners = []
+        // book.comments.forEach(async(comment)=>{
+        //     let user = await User.findOne({_id: comment.ownerId},{avatar: 0})
+        //     comment.ownerId = {email: user.email, name: user.name}
+        //     console.log(comment)
+        // })
         // console.log(owners)
         res.json({data: book, comments:book.comments})
     } catch (e) {
@@ -108,7 +108,7 @@ router.put('/update/admin/:id', async (req, res) => {
 
     // To check if value in valid values for updates
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['title', 'author', 'description', 'rate', 'price', 'amount', 'description']
+    const allowedUpdates = ['description']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
     if (!isValidOperation) {
         return res.status(400).json({ error: 'error value for updates' })
@@ -129,7 +129,7 @@ router.put('/update/admin/:id', async (req, res) => {
 router.get('',  async (req, res) => {
     try {
         // To Ignore Avatar 
-        const books = await Book.find({}, { avatar: 0 })
+        const books = await Book.find({}, { avatar: 0 }).limit(20)
         res.json(books)
     } catch (e) {
         res.status(500).json()
