@@ -70,13 +70,6 @@ router.get('/:id', auth, async (req, res) => {
             return res.status(400).json('No books found')
         }
 
-        // let owners = []
-        // book.comments.forEach(async(comment)=>{
-        //     let user = await User.findOne({_id: comment.ownerId},{avatar: 0})
-        //     comment.ownerId = {email: user.email, name: user.name}
-        //     console.log(comment)
-        // })
-        // console.log(owners)
         res.json({data: book, comments:book.comments})
     } catch (e) {
         res.status(500).json()
@@ -121,6 +114,17 @@ router.put('/update/admin/:id', async (req, res) => {
         res.status(200).json(book)
     } catch (e) {
         res.status(400).json(e)
+    }
+})
+
+router.delete('/delete/:id', async (req, res)=>{
+    const {id}=req.params
+    
+    try{
+        const book = await Book.findByIdAndRemove(id)
+        res.json(book)
+    }catch(e){
+        res.json(e)
     }
 })
 
