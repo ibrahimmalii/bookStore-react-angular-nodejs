@@ -80,7 +80,6 @@ router.post('/oauthsignup', async (req, res) => {
         } else {
             try{
                 const user = await User.findOne({ email })
-                console.log(user)
                 const token = await user.generateAuthToken()
                 res.send({ user, token })
             } catch (e) {
