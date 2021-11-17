@@ -46,9 +46,10 @@ h5 {
   margin-top: 19px;
 }
 
-*{
-    direction: rtl;
+* {
+  direction: rtl;
 }
+
 .carousel-item>img {
   height: 500px;
   background-attachment: fixed;

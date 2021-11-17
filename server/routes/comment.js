@@ -18,7 +18,7 @@ router.post("/:id", auth, async (req, res) => {
   }
 });
 
-router.delete("/:id", auth, async (req, res) => {
+router.post("/delete/:id", auth, async (req, res) => {
   const user = req.user;
   const { id } = req.params;
   try {
