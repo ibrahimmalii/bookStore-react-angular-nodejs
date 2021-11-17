@@ -133,7 +133,7 @@ router.delete('/delete/:id', async (req, res)=>{
 router.get('',  async (req, res) => {
     try {
         // To Ignore Avatar 
-        const books = await Book.find({}, { avatar: 0 }).limit(20)
+        const books = await Book.find({}, { avatar: 0 })
         res.json(books)
     } catch (e) {
         res.status(500).json()
