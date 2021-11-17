@@ -79,11 +79,16 @@ export class HomeComponent implements OnInit {
   //check if book is in cart and make a green border around the book card
 
   isAdded(bookId: number){
+    if(localStorage.localCart){
     let itemCart = JSON.parse(localStorage.getItem("localCart")!);
     for(let i = 0; i < itemCart.length; i++)
       if(itemCart[i]._id === bookId)
         return true;
     return false;
+    }
+    else{
+      return false;
+    }
   }
 
   //*************** Start Of Pagination Function****************/
