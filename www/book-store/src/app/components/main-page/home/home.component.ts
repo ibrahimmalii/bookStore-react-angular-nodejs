@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -40,7 +41,7 @@ export class HomeComponent implements OnInit {
 
     const token = localStorage.token
 
-    this.apiService.get('http://localhost:8080/api/books',
+    this.apiService.get(`${environment.baseUrl}/api/books`,
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
         this.books = res;

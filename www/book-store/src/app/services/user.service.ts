@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { ApiService } from './api.service';
-import { environment } from './../../environments/environment.prod';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  loginUrl = 'http://localhost:8080/api/auth/login';
-  registerUrl = 'http://localhost:8080/api/auth/register';
-  OAuthUrl = 'http://localhost:8080/api/auth/oauthsignup';
+  loginUrl = `${environment.baseUrl}/api/auth/login`;
+  registerUrl = `${environment.baseUrl}/api/auth/register`;
+  OAuthUrl = `${environment.baseUrl}/api/auth/oauthsignup`;
 
   loggedStatus =new Subject<boolean>();
   constructor(private apiService : ApiService) {

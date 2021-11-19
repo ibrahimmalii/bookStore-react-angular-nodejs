@@ -1,6 +1,7 @@
 import { ApiService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -32,7 +33,7 @@ export class HeaderComponent implements OnInit {
   getCatBooks(id:string){
 
     const token = localStorage.token
-    this.apiService.get(`http://localhost:8080/api/categories/${id}`,
+    this.apiService.get(`${environment.baseUrl}/api/categories/${id}`,
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
         console.log(res)
