@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
   bookUpdated: boolean = false;
 
 
+
   ngOnInit(): void {
     // this.http.get('http://localhost:8080/api/users').subscribe(res=>{
     //   this.users = res
@@ -95,6 +96,21 @@ getMinPrice(minPrice:any){
     return this.rating = num;
   }
 
+  //check if book is in cart and make a green border around the book card
+
+  isAdded(bookId: number){
+    if(localStorage.localCart){
+    let itemCart = JSON.parse(localStorage.getItem("localCart")!);
+    for(let i = 0; i < itemCart.length; i++)
+      if(itemCart[i]._id === bookId)
+        return true;
+    return false;
+    }
+    else{
+      return false
+
+    }
+  }
 
   //*************** Start Of Pagination Function****************/
 
