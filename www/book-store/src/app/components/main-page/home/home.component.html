@@ -48,7 +48,9 @@
     <div class="col">
       <div class="row g-3">
         <div class="col-12 col-lg-4" *ngFor="let book of getbooks(minPrice, maxPrice) |filter:searchedText">
-          <div class="card text-center">
+          <div class="card text-center" [ngStyle]=" {
+              'border':  isAdded(book._id) && '2px solid green'
+            }">
             <a>
               <!-- *ngIf="book.price <= maxPrice && book.price >= minPrice" -->
               <img src="http://localhost:8080/api/books/{{ book._id }}/avatar" (click)="goToDetails(book._id)" />

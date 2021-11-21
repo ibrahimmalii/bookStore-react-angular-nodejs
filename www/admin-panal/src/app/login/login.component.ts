@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
 
     if (this.form.valid) {
       console.log(this.form.value);
-      this.http.post('http://localhost:8080/api/auth/login',this.form.value).subscribe(res => {
+      this.http.post(`${environment.baseUrl}/api/auth/login`,this.form.value).subscribe(res => {
         console.log(res)
         this.logginData = res;
         if (this.logginData) {
