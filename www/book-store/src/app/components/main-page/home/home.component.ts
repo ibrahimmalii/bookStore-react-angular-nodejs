@@ -16,21 +16,27 @@ export class HomeComponent implements OnInit {
   title = "";
   // @Output() search = new EventEmitter <any>();
   // Title ="";
+    maxPrice=500;
+    minPrice=0;
+
   rating = 0;
   starCount = 5;
-
+  originalBooks:any;
+  searchedText="";
   ratingArr: boolean[] = [];
   constructor(private router: Router, private apiService: ApiService, private _cart: CartService) {
 
   }
   users: any;
   books: any;
+  newbooks:Array<any> = [];
   responseGet: Boolean = false
   items: any;
   pageOfItems: Array<any> = [];
   isPageLoaded: boolean = false;
   bookUpdated: boolean = false;
   
+
 
   ngOnInit(): void {
     // this.http.get('http://localhost:8080/api/users').subscribe(res=>{
@@ -45,23 +51,37 @@ export class HomeComponent implements OnInit {
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
         this.books = res;
+        this.originalBooks=this.books;
         this.items = Array(3).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}` }));
         this.responseGet = true;
         this.ratingArr = Array(this.starCount).fill(false);
       })
   }
-  Search() {
-    console.log(this.title)
-    if (this.title != "") {
-      this.books = this.books.filter((res: { title: string; }) => {
-        return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase())
-      });
-    }
-    else if (this.title == "") {
-      this.ngOnInit();
-    }
 
+  getSearchText(text:any){
+    this.searchedText = text
+}
+getMaxPrice(maxPrice:any){
+  this.books=this.books;
+  this.maxPrice = maxPrice
+}
+getbooks(minPrice:any,maxPrice:any){
+  let newbooks:Array<any> = [];
+  for(let i=0;i<this.books.length;i++){
+    if(this.books[i].price >= minPrice&&this.books[i].price <= maxPrice){
+      newbooks.push(this.books[i]);
+    }
   }
+  console.log(newbooks);
+  return newbooks
+}
+
+getMinPrice(minPrice:any){
+  this.minPrice= minPrice;
+}
+
+
+  // }
   returnStar(i: number) {
     if (this.rating >= i + 1) {
       return 'star';
@@ -104,6 +124,7 @@ addToCart(book:any){
   this._cart.toCart(book);
 }
 goToDetails(id:any){
+
   this.router.navigateByUrl(`/categories/book-details/${id}`)
 }
 }
