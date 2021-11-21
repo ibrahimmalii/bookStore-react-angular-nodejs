@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Chartist from 'chartist';
-import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -64,7 +63,7 @@ export class DashboardComponent implements OnInit {
   isPageLoaded:boolean = false
 
   ngOnInit() {
-    this.http.get(`${environment.baseUrl}/api/users`).subscribe((response)=>{
+    this.http.get('http://localhost:8080/api/users').subscribe((response)=>{
       this.users = response
       this.isPageLoaded = true
     })
