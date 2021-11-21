@@ -33,16 +33,17 @@
   background-color: #e6e6e6;
 }
 
-body{
-  padding-top:0.8%
+body {
+  padding-top: 0.8%
 }
 
 /* *{
   direction:rtl;
 } */
-a{
+a {
   cursor: pointer;
 }
+
 /*
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

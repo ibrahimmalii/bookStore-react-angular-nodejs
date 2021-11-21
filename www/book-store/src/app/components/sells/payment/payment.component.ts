@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-payment',
@@ -24,7 +25,7 @@ export class PaymentComponent implements OnInit {
 
   // ************* paypal ***********//
   paypal(){
-    location.assign('http://localhost:8080')
+    location.assign(`${environment.baseUrl}`)
   }
 
 
@@ -48,7 +49,7 @@ export class PaymentComponent implements OnInit {
       token: async (token: any) => {
         try {
           this.beforeClick = true
-          this.apiService.post('http://localhost:8080/api/payment',
+          this.apiService.post(`${environment.baseUrl}/api/payment`,
             { tokenId: token.id, amount: 70 }
           ).subscribe((response: any) => {
             console.log(response)

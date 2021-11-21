@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
   pageOfItems: Array<any> = [];
   isPageLoaded: boolean = false;
   bookUpdated: boolean = false;
+  
 
   ngOnInit(): void {
     // this.http.get('http://localhost:8080/api/users').subscribe(res=>{
@@ -39,7 +41,7 @@ export class HomeComponent implements OnInit {
 
     const token = localStorage.token
 
-    this.apiService.get('http://localhost:8080/api/books',
+    this.apiService.get(`${environment.baseUrl}/api/books`,
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
         this.books = res;
@@ -75,6 +77,20 @@ export class HomeComponent implements OnInit {
     return this.rating = num;
   }
 
+  //check if book is in cart and make a green border around the book card
+
+  isAdded(bookId: number){
+    if(localStorage.localCart){
+    let itemCart = JSON.parse(localStorage.getItem("localCart")!);
+    for(let i = 0; i < itemCart.length; i++)
+      if(itemCart[i]._id === bookId)
+        return true;
+    return false;
+    }
+    else{
+      return false;
+    }
+  }
 
   //*************** Start Of Pagination Function****************/
 
