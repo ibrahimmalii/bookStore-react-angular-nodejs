@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   pageOfItems: Array<any> = [];
   isPageLoaded: boolean = false;
   bookUpdated: boolean = false;
-  
+
 
 
   ngOnInit(): void {
@@ -67,9 +67,9 @@ getMaxPrice(maxPrice:any){
 }
 getbooks(minPrice:any,maxPrice:any){
   let newbooks:Array<any> = [];
-  for(let i=0;i<this.books.length;i++){
-    if(this.books[i].price >= minPrice&&this.books[i].price <= maxPrice){
-      newbooks.push(this.books[i]);
+  for(let i=0;i<this.pageOfItems.length;i++){
+    if(this.pageOfItems[i].price >= minPrice&&this.pageOfItems[i].price <= maxPrice){
+      newbooks.push(this.pageOfItems[i]);
     }
   }
   console.log(newbooks);
