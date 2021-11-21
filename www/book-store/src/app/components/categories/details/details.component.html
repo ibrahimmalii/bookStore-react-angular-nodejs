@@ -8,7 +8,7 @@
         <div class="card  mb-3 col-12 mt-5">
           <div class="row g-0 ">
             <div class="col-md-11 col-lg-5">
-              <img class="img  mt-3 mb-3 w-100" src="http://localhost:8080/api/books/{{card._id}}/avatar" />
+              <img class="img  mt-3 mb-3 w-100" src="https://admin-panal-back.herokuapp.com/api/books/{{card._id}}/avatar" />
             </div>
             <div class="col-md-11 col-lg-6">
               <div class="card-body">
@@ -100,7 +100,7 @@
       <div class="col-md-9 col-lg-3 similar" *ngFor="let book of books">
         <a>
           <img class="w-100 mt-5 mx-0 card-img" (click)="openDetails(book._id)"
-            src="http://localhost:8080/api/books/{{book._id}}/avatar">
+            src="https://admin-panal-back.herokuapp.com/api/books/{{book._id}}/avatar">
         </a>
         <p class="mt-4 fs-5 lh-base"> {{book.title}}</p>
 

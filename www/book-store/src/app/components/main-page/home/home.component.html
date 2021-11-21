@@ -52,7 +52,7 @@
           <div class="card text-center">
             <a>
               <!-- *ngIf="book.price <= maxPrice && book.price >= minPrice" -->
-              <img src="http://localhost:8080/api/books/{{ book._id }}/avatar" (click)="goToDetails(book._id)" />
+              <img src="https://admin-panal-back.herokuapp.com/api/books/{{ book._id }}/avatar" (click)="goToDetails(book._id)" />
             </a>
             <div class="card-body">
               <h3>المؤلف : {{ book.author }}</h3>
