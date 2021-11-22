@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-table-list',
@@ -14,7 +15,7 @@ export class TableListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8080/api/users').subscribe((response)=>{
+    this.http.get(`${environment.baseUrl}/api/users`).subscribe((response)=>{
       this.users = response
       this.isPageLoaded = true
     })
@@ -22,7 +23,7 @@ export class TableListComponent implements OnInit {
 
 
   deleteUser(id:any, index:number){
-    this.http.delete(`http://localhost:8080/api/users/${id}`).subscribe(response=>{
+    this.http.delete(`${environment.baseUrl}/api/users/${id}`).subscribe(response=>{
       this.users.splice(index, 1)
     })
   }

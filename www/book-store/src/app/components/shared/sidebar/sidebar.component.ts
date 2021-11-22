@@ -4,6 +4,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
 import{ LabelType} from "@angular-slider/ngx-slider"
 import { ApiService } from 'src/app/services/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sidebar',
@@ -34,7 +35,7 @@ export class SidebarComponent implements OnInit {
 
     const token = localStorage.token
 
-    this.apiService.get('http://localhost:8080/api/books',
+    this.apiService.get(`${environment.baseUrl}/api/books`,
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
         console.log(res)
@@ -56,7 +57,7 @@ export class SidebarComponent implements OnInit {
   getCatBooks(id:string){
 
     const token = localStorage.token
-    this.apiService.get(`http://localhost:8080/api/categories/${id}`,
+    this.apiService.get(`${environment.baseUrl}/api/categories/${id}`,
       { headers: { 'Authorization': `Bearer ${token}` } })
       .subscribe(res => {
         console.log(res)
