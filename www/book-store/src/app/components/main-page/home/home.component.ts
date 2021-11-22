@@ -105,10 +105,11 @@ getMinPrice(minPrice:any){
     for(let i = 0; i < itemCart.length; i++)
       if(itemCart[i]._id === bookId)
         return true;
-    return false;
+     return false;
     }
     else{
-      return false;
+      return false
+
     }
   }
 
