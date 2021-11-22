@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container">
+<div class="container-fluid">
 
 
   <div class="row">
@@ -8,7 +8,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="https://media.istockphoto.com/photos/good-book-can-do-the-world-of-good-picture-id1257761640?k=20&m=1257761640&s=612x612&w=0&h=g4uD83X0qNVO7YNagIA1IyBLT1w0pBCwfFifie4_L-E="
+            src="https://media.istockphoto.com/photos/concept-of-learning-education-open-book-on-the-wooden-table-in-the-picture-id1268151176?b=1&k=20&m=1268151176&s=170667a&w=0&h=UuMQ4bUhHbcJJSveABfP1mnFMAZ3BVHzfDWN3Mg0YuE="
             class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
@@ -40,65 +40,63 @@
 
 
 <div class="container mt-5">
-  <input type="search" [(ngModel)]="title" (input)="Search()" class="form-control rounded"
-    placeholder="البحث عن منتجات...." aria-label="Search" aria-describedby="search-addon" />
-  <div class="container">
-    <div class="row" *ngIf="responseGet">
-      <div class="col-12 col-lg-4">
-        <app-sidebar></app-sidebar>
-      </div>
-
-      <div class="col">
-        <div class="row g-3">
-          <div class="col-12 col-lg-4" *ngFor="let book of pageOfItems">
-            <div class="card text-center" [ngStyle]=" {
+  <div class="row" *ngIf="responseGet">
+    <div class="col-12 col-lg-4">
+      <app-sidebar *ngIf="books" (minPrice)="getMinPrice($event)" (maxPrice)="getMaxPrice($event)"
+        (searchText)="getSearchText($event)"></app-sidebar>
+    </div>
+    <div class="col">
+      <div class="row g-3">
+        <div class="col-12 col-lg-4" *ngFor="let book of getbooks(minPrice, maxPrice) |filter:searchedText">
+          <div class="card text-center" [ngStyle]=" {
               'border':  isAdded(book._id) && '2px solid green'
             }">
-              <a>
-                <img src="http://localhost:8080/api/books/{{ book._id }}/avatar" (click)="goToDetails(book._id)" />
-              </a>
-              <div class="card-body">
-                <h3>المؤلف : {{ book.author }}</h3>
-                <h5 class="card-title">
-                  <!-- maxLength: 22:"....." -->
-                  {{ book.title }}
-                </h5>
-                <span class="badge fs-5 rounded-pill bg-primary" id="price">
-                  {{ book.price }} جنيه
-                </span>
+            <a>
+              <!-- *ngIf="book.price <= maxPrice && book.price >= minPrice" -->
+              <img src="https://admin-panal-back.herokuapp.com/api/books/{{ book._id }}/avatar"
+                (click)="goToDetails(book._id)" />
+            </a>
+            <div class="card-body">
+              <h3>المؤلف : {{ book.author }}</h3>
+              <h5 class="card-title">
+                <!-- maxLength: 22:"....." -->
+                {{ book.title }}
+              </h5>
+              <span class="badge fs-5 rounded-pill bg-primary" id="price">
+                {{ book.price }} جنيه
+              </span>
 
-                <!-- <div class="price">
+              <!-- <div class="price">
                   <h5>{{ book.price }}</h5>
                 </div> -->
-                <!-- (input)="stars(book)" -->
+              <!-- (input)="stars(book)" -->
 
-                <div class="rateing">
-                  <!-- <div class="hidden">
+              <div class="rateing">
+                <!-- <div class="hidden">
                     {{ getCarruntRate(book.rate) }}
                   </div> -->
-                  <p hidden>
-                    {{ getCarruntRate(book.rate) }}
-                  </p>
+                <p hidden>
+                  {{ getCarruntRate(book.rate) }}
+                </p>
 
-                  <button mat-icon-button class="btn text-warning" *ngFor="let r of ratingArr; index as i">
-                    <mat-icon>
-                      {{ returnStar(i) }}
-                    </mat-icon>
-                  </button>
-                </div>
-
-                <button type="button" id="addCart" class="btn btn-danger btn" (click)="addToCart(book)">
-                  الاضافة الي العربة
+                <button mat-icon-button class="btn btn-sm text-warning m-0" *ngFor="let r of ratingArr; index as i">
+                  <mat-icon>
+                    {{ returnStar(i) }}
+                  </mat-icon>
                 </button>
               </div>
+
+              <button class="btn btn-danger" id="addCart" (click)="addToCart(book)">الاضافة الي العربة</button>
+
             </div>
           </div>
         </div>
-        <div class="card-footer pb-0 pt-3">
+        <div class="card-footer p-3 m-auto">
           <jw-pagination [items]="books" (changePage)="onChangePage($event)"></jw-pagination>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <app-footer></app-footer>
+<app-footer></app-footer>

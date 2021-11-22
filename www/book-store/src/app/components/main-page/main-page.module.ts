@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 // import {NgPipesModule} from 'ngx-pipes';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
     HomeComponent,
   ],
   imports: [
-    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,JwPaginationModule,FormsModule
+    CommonModule, SharedModule, RouterModule.forChild(routes),MatIconModule,JwPaginationModule,FormsModule,Ng2SearchPipeModule
   ]
 })
 export class MainPageModule { }
