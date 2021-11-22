@@ -28,7 +28,6 @@
     "detect-it": "^4.0.1",
     "detect-passive-events": "^2.0.3",
     "jw-angular-pagination": "^1.2.0",
-    "ng2-search-filter": "^0.5.1",
     "ngx-pipes": "^2.7.6",
     "paypal-rest-sdk": "^1.8.1",
     "rxjs": "~6.6.0",
