@@ -74,7 +74,7 @@
         </div>
 
         <div class="pull-right mr-3 mt-3">
-          <h1 class="text-end fw-bold mt-5 text-light">من فضلك قم بتقيم الكتاب </h1>
+          <h1 class="text-end fw-bold mt-5 text-dark">من فضلك قم بتقيم الكتاب </h1>
           <!-- Display an array of star/star_border buttons -->
 
           <button mat-icon-button class="btn btn-lg border-0 text-warning " *ngFor="let r of ratingArr; index as i"
@@ -92,7 +92,7 @@
     <div class="container  " *ngIf="form">
       <div class="row col-md-12 col-lg-12  ">
         <form [formGroup]="form" class="col-md-12  col-lg-8 ">
-          <h1 class=" text-light mt-5"> التعليقات </h1>
+          <h1 class=" text-dark mt-5"> التعليقات </h1>
           <div class="input-group">
             <textarea class="form-control comment" formControlName="commentContent" placeholder="اترك تعليقاً"
               #comment></textarea>
@@ -109,12 +109,12 @@
             <ul class="list-group " *ngFor="let comment of comments; index as j">
               <li class="list-group-item   mt-2   commented">
                 <span class="media text-right mb-3">
-                  <img src="https://randomuser.me/api/portraits/men/84.jpg" class="ml-3" alt="...">
+                  <img src="\assets\images/" class="ml-3" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">{{comment.ownerName}}&nbsp;
+                    <h5 class="mt-0 text-secondary fs-5">{{comment.ownerName}}&nbsp;
 
                     </h5>
-                    <p>
+                    <p class="text-black">
                       {{comment.description}}
                     </p>
                   </div>
