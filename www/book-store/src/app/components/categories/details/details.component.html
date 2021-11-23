@@ -8,7 +8,8 @@
         <div class="card  mb-3 col-12 mt-5">
           <div class="row g-0 ">
             <div class="col-md-11 col-lg-5">
-              <img class="img  mt-3 mb-3 w-100" src="https://admin-panal-back.herokuapp.com/api/books/{{card._id}}/avatar" />
+              <img class="img  mt-3 mb-3 w-100"
+                src="https://admin-panal-back.herokuapp.com/api/books/{{card._id}}/avatar" />
             </div>
             <div class="col-md-11 col-lg-6">
               <div class="card-body">
@@ -30,14 +31,14 @@
 
               </span>
               <button type="button" class="btn rounded-pill btn-lg custom-button ml-3  mr-5 float-left"
-               (click)="goToCart()">اضف الي العربة <i class="fa fa-shopping-cart"></i></button>
+                (click)="goToCart()">اضف الي العربة <i class="fa fa-shopping-cart"></i></button>
             </span>
 
           </div>
         </div>
 
         <div class="pull-right mr-3 mt-3">
-          <h1 class="text-end fw-bold mt-5 text-light">من فضلك قم بتقيم الكتاب </h1>
+          <h1 class="text-end fw-bold mt-5 text-dark">من فضلك قم بتقيم الكتاب </h1>
           <!-- Display an array of star/star_border buttons -->
 
           <button mat-icon-button class="btn btn-lg border-0 text-warning " *ngFor="let r of ratingArr; index as i"
@@ -55,7 +56,7 @@
     <div class="container  " *ngIf="form">
       <div class="row col-md-12 col-lg-12  ">
         <form [formGroup]="form" class="col-md-12  col-lg-8 ">
-          <h1 class=" text-light mt-5"> التعليقات </h1>
+          <h1 class=" text-dark mt-5"> التعليقات </h1>
           <div class="input-group">
             <textarea class="form-control comment" formControlName="commentContent" placeholder="اترك تعليقاً"
               #comment></textarea>
@@ -69,21 +70,20 @@
 
           <div class="vertical-row"></div>
           <div>
-            <ul class="list-group " *ngFor="let comment of comments">
+            <ul class="list-group " *ngFor="let comment of comments; index as j">
               <li class="list-group-item   mt-2   commented">
                 <span class="media text-right mb-3">
-                  <img src="https://randomuser.me/api/portraits/men/84.jpg" class="ml-3" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">{{comment.ownerName}}&nbsp;
+                    <h5 class="mt-0 text-secondary fs-5">{{comment.ownerName}}&nbsp;
 
                     </h5>
-                    <p>
+                    <p class="text-black">
                       {{comment.description}}
                     </p>
                   </div>
                 </span>
                 <button type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
-                  (click)="deleteBookComment(comment._id)">مسح</button>
+                  (click)="deleteBookComment(comment._id, j)">مسح</button>
               </li>
             </ul>
           </div>

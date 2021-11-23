@@ -50,6 +50,20 @@ getCarruntRate(num:number){
   return this.rating=num;
 }
 
+isAdded(bookId: number){
+    if(localStorage.localCart){
+    let itemCart = JSON.parse(localStorage.getItem("localCart")!);
+    for(let i = 0; i < itemCart.length; i++)
+      if(itemCart[i]._id === bookId)
+        return true;
+     return false;
+    }
+    else{
+      return false
+
+    }
+  }
+  
 addToCart(book:any){
   this._cart.toCart(book);
 }

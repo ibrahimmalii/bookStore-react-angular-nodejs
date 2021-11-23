@@ -2,6 +2,7 @@ import { ApiService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private userService: UserService) {
+  constructor(private apiService: ApiService, private userService: UserService, private router: Router) {
     this.userService.cartSubject.subscribe((data)=>{
     this.cartItem =data;
     });
@@ -56,5 +57,12 @@ export class HeaderComponent implements OnInit {
 
   logStatus(): boolean{
     return this.userService.isLogged();
+  }
+
+  goToCart(){
+    if(this.userService.isLogged())
+      this.router.navigateByUrl('/sells/cart');
+    else
+      this.router.navigateByUrl('/auth/login');
   }
 }

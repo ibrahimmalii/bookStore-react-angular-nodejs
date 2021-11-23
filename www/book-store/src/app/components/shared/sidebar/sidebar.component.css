@@ -90,3 +90,7 @@ p {
   display: flex;
   justify-content: end;
 }
+
+* {
+  font-size: 1rem;
+}

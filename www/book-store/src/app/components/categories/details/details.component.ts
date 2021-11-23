@@ -7,7 +7,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { takeUntil } from 'rxjs/operators';
 import { UserService } from 'src/app/services/user.service';
 import { Location } from '@angular/common';
-import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-details',
@@ -34,7 +33,7 @@ export class DetailsComponent implements OnInit {
   token = localStorage.token;
   id: number = 0;
   headerObj = { headers: { 'Authorization': `Bearer ${this.token}` } };
-  constructor(private snackBar: MatSnackBar, private _DetailsService: DetailsService, private _activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder, private userService: UserService, private router: Router, private location: Location,private _cart: CartService) {
+  constructor(private snackBar: MatSnackBar, private _DetailsService: DetailsService, private _activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder, private userService: UserService, private router: Router, private location: Location) {
   }
 
   ngOnInit(): void {
@@ -77,6 +76,7 @@ export class DetailsComponent implements OnInit {
         this.ratingArr = Array(this.starCount).fill(false);
 
         this.comments = response.comments;
+        console.log(this.comments)
         this.comments = this.comments.splice(this.comments.length - 5, this.comments.length);
       },
       (error: any) => {
@@ -134,18 +134,16 @@ export class DetailsComponent implements OnInit {
     )
   }
 
-  deleteBookComment(id: any){
-      console.log(id);
+  deleteBookComment(id: any, index: any){
      this._DetailsService.deleteBookComment(id, this.headerObj).subscribe(
       (responsea: any) => {
         console.log(responsea);
-        
+        this.comments.splice(index, 1);
       },
       (error: any) => {
         console.log(error);
       }
     )
-    this.comments = this.comments.splice(this.comments.length - 5, this.comments.length);
   }
 
   returnStar(i: number) {
@@ -165,7 +163,27 @@ export class DetailsComponent implements OnInit {
 
   }
   goToCart() {
-    this._cart.toCart(this.card);
+    let storedBooks = [];
+    let found = false;
+    if (localStorage.toCart) {
+
+      storedBooks = JSON.parse(localStorage.toCart);
+      for (let item in storedBooks) {
+        if (storedBooks[item]._id ==
+          this.card._id)
+          found = true;
+      }
+      if (!found) {
+        storedBooks.push(this.card);
+      }
+
+    }
+    else if (!localStorage.toCart) {
+      storedBooks.push(this.card);
+    }
+
+    localStorage.setItem("toCart", JSON.stringify(storedBooks));
+    this.router.navigate(['/sells']);
 
   }
 
