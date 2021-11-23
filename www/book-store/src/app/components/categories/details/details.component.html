@@ -106,7 +106,7 @@
 
           <div class="vertical-row"></div>
           <div>
-            <ul class="list-group " *ngFor="let comment of comments">
+            <ul class="list-group " *ngFor="let comment of comments; index as j">
               <li class="list-group-item   mt-2   commented">
                 <span class="media text-right mb-3">
                   <img src="https://randomuser.me/api/portraits/men/84.jpg" class="ml-3" alt="...">
@@ -120,7 +120,7 @@
                   </div>
                 </span>
                 <button type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
-                  (click)="deleteBookComment(comment._id)">مسح</button>
+                  (click)="deleteBookComment(comment._id, j)">مسح</button>
               </li>
             </ul>
           </div>

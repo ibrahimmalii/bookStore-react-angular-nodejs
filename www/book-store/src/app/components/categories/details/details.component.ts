@@ -134,18 +134,16 @@ export class DetailsComponent implements OnInit {
     )
   }
 
-  deleteBookComment(id: any){
-      console.log(id);
+  deleteBookComment(id: any, index: any){
      this._DetailsService.deleteBookComment(id, this.headerObj).subscribe(
       (responsea: any) => {
         console.log(responsea);
-        
+        this.comments.splice(index, 1);
       },
       (error: any) => {
         console.log(error);
       }
     )
-    this.comments = this.comments.splice(this.comments.length - 5, this.comments.length);
   }
 
   returnStar(i: number) {
