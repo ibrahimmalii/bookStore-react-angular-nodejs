@@ -14,6 +14,7 @@ const routes: Routes = [
   },{
     path: 'sells',
     loadChildren: () => import('./components/sells/sells.module').then(m => m.SellsModule)
+    ,canActivate:[AuthGuard]
   },
   {path: 'orders/pay' , component: CardComponent}
 ,
