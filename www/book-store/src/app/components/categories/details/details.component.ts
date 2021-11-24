@@ -176,28 +176,7 @@ export class DetailsComponent implements OnInit {
 
   }
   goToCart() {
-    let storedBooks = [];
-    let found = false;
-    if (localStorage.toCart) {
-
-      storedBooks = JSON.parse(localStorage.toCart);
-      for (let item in storedBooks) {
-        if (storedBooks[item]._id ==
-          this.card._id)
-          found = true;
-      }
-      if (!found) {
-        storedBooks.push(this.card);
-      }
-
-    }
-    else if (!localStorage.toCart) {
-      storedBooks.push(this.card);
-    }
-
-    localStorage.setItem("toCart", JSON.stringify(storedBooks));
-    this.router.navigate(['/sells']);
-
+    this._cart.toCart(this.card);
   }
 
   makeRate(i: number) {
