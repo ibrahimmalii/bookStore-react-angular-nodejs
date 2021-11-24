@@ -60,7 +60,7 @@
             <textarea class="form-control comment" formControlName="commentContent" placeholder="اترك تعليقاً"
               #comment></textarea>
           </div>
-          <button type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
+          <button  type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
             (click)="pushComment(comment.value);comment.value=''"> نشر<i class="fa fa-paper-plane"
               aria-hidden="true"></i></button>
           <br>
@@ -72,9 +72,8 @@
             <ul class="list-group " *ngFor="let comment of comments">
               <li class="list-group-item   mt-2   commented">
                 <span class="media text-right mb-3">
-                  <img src="\assets\images/" class="ml-3" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0 text-secondary fs-5">{{comment.ownerName}}&nbsp;
+                    <h5 class="mt-0 text-secondary">{{comment.ownerName}}&nbsp;
 
                     </h5>
                     <p class="text-black">
@@ -82,7 +81,7 @@
                     </p>
                   </div>
                 </span>
-                <button type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
+                <button *ngIf="sameUser(comment.ownerName)" type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
                   (click)="deleteBookComment(comment._id)">مسح</button>
               </li>
             </ul>

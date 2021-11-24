@@ -35,6 +35,7 @@ export class DetailsComponent implements OnInit {
   id: number = 0;
   headerObj = { headers: { 'Authorization': `Bearer ${this.token}` } };
   constructor(private snackBar: MatSnackBar, private _DetailsService: DetailsService, private _activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder, private userService: UserService, private router: Router, private location: Location,private _cart: CartService) {
+
   }
 
   ngOnInit(): void {
@@ -85,7 +86,18 @@ export class DetailsComponent implements OnInit {
 
     );
 
+
   }
+
+  sameUser(comment_name: string){
+
+    if(JSON.parse((localStorage.getItem("user")!)).name == comment_name)
+    {
+
+    return true;
+    }else
+    return false;
+    }
   openDetails(id: number) {
     this.router.navigateByUrl(`/categories/book-details/${id}`)
     this.id = id;
@@ -139,7 +151,7 @@ export class DetailsComponent implements OnInit {
      this._DetailsService.deleteBookComment(id, this.headerObj).subscribe(
       (responsea: any) => {
         console.log(responsea);
-        
+
       },
       (error: any) => {
         console.log(error);
