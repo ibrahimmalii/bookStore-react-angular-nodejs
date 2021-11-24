@@ -74,7 +74,7 @@
               <li class="list-group-item   mt-2   commented">
                 <span class="media text-right mb-3">
                   <div class="media-body">
-                    <h5 class="mt-0 text-secondary fs-5">{{comment.ownerName}}&nbsp;
+                    <h5 class="mt-0 text-secondary">{{comment.ownerName}}&nbsp;
 
                     </h5>
                     <p class="text-black">
@@ -82,7 +82,8 @@
                     </p>
                   </div>
                 </span>
-                <button type="button" class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
+                <button *ngIf="sameUser(comment.ownerName)" type="button"
+                  class="btn btn-danger btn-md rounded-pill pull-right mt-3 pl-3  mb-2"
                   (click)="deleteBookComment(comment._id, j)">مسح</button>
               </li>
             </ul>

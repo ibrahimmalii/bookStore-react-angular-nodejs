@@ -7,6 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { takeUntil } from 'rxjs/operators';
 import { UserService } from 'src/app/services/user.service';
 import { Location } from '@angular/common';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-details',
@@ -33,7 +34,8 @@ export class DetailsComponent implements OnInit {
   token = localStorage.token;
   id: number = 0;
   headerObj = { headers: { 'Authorization': `Bearer ${this.token}` } };
-  constructor(private snackBar: MatSnackBar, private _DetailsService: DetailsService, private _activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder, private userService: UserService, private router: Router, private location: Location) {
+  constructor(private snackBar: MatSnackBar, private _DetailsService: DetailsService, private _activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder, private userService: UserService, private router: Router, private location: Location,private _cart: CartService) {
+
   }
 
   ngOnInit(): void {
@@ -85,7 +87,18 @@ export class DetailsComponent implements OnInit {
 
     );
 
+
   }
+
+  sameUser(comment_name: string){
+
+    if(JSON.parse((localStorage.getItem("user")!)).name == comment_name)
+    {
+
+    return true;
+    }else
+    return false;
+    }
   openDetails(id: number) {
     this.router.navigateByUrl(`/categories/book-details/${id}`)
     this.id = id;
