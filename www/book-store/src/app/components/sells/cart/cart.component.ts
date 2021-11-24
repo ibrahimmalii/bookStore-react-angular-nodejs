@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -13,13 +15,16 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
   totalOrder: any;
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
 
   products: any;
   productAmount: number = 1;
 
   ngOnInit(): void {
-
+    if(!this.userService.isLogged()){
+      this.router.navigateByUrl('/auth/login');
+    }
+    
     this.products = localStorage.localCart
     if (this.products) {
       this.products = JSON.parse(this.products)

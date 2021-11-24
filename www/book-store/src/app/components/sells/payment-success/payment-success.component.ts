@@ -14,6 +14,7 @@ export class PaymentSuccessComponent implements OnInit {
     setTimeout(() => {
       this.router.navigateByUrl('/')
     }, 3000);
+    localStorage.removeItem('localCart');
   }
 
 }
